@@ -10,14 +10,14 @@ a{text-decoration: none;color: #646464;}
 .r{float: right;}
 .clear:after{content: "";display: block; clear: both;}
 
-.head{width: 100%; height: 57px;border: 1px solid #eaecef;}
+.head{width: 100%; height: 57px;border: 1px solid #eaecef;position: fixed;background: white;}
 .head .title{line-height: 16px; font-size: 16px;margin: 20px 25px; font-weight: bold; }
 .head .menu{height: 57px;}
 .head .menu ul{height: 57px;}
 .head .menu ul li{display: block; line-height: 16px; font-size: 16px;margin: 20px 25px;}
 .head .menu ul li .selected {border-bottom: 2px solid #46bd87; }
 
-.nav{width: 320px;overflow-y: scroll; height: 860px;position: fixed;}
+.nav{width: 320px;overflow-y: scroll; height: 860px;position: fixed;margin-top: 58px;}
 .nav .point{margin-top: 30px;margin-left: 25px;}
 .nav .point .point_list a{font-weight: bold;font-size: 16px;line-height: 16px;}
 .nav .point .point_list .point_child{margin-top: 22px;margin-left: 12px;}
@@ -29,5 +29,10 @@ a{text-decoration: none;color: #646464;}
 .nav .nav_selected:before{content: "";display: block;width: 4px; height: 16px; background: #3eaf7c;float: left;margin-left: -20px;}
 
 
-.quote{width: 800px; margin-left: 750px;height: 100%;border: 1px black solid;}
-.quote iframe{width: 100%;height: 5000px;}
+.quote{width: 800px; margin-left: 750px;margin-top: 58px;}
+/***********************   this is for online-post  *******************/
+/* .quote iframe{width: 100%;min-height: 500px; margin-bottom: 50px;} */
+/***********************   this is for online-post ********************/
+
+
+.quote iframe{width: 100%;height: 5000px; margin-bottom: 50px;}
