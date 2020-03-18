@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <style>
+        #box1{width: 150px;height: 200px;border: 1px black solid; margin: 20px auto;}
+        #box1 #p1{color: white;background: grey;text-indent: 0;margin: 40px auto;width: 150px;}
+        #box1 #p2{color: white;background: grey;text-indent: 0;margin: 40px auto; width: 150px;}
+
+        #box1:hover #p1{animation: 0.8s upMove_down;}
+        @keyframes upMove_down{
+            0%{transform: translateY(-50px);opacity: 0;}
+            100%{transform: translateY(0);opacity: 1;}
+        }
+
+        #box1:hover #p2{animation: 0.8s downMove_up;}
+        @keyframes downMove_up{
+            0%{transform: translateY(50px);opacity: 0;}
+            100%{transform: translateY(0);opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>css实现鼠标移动淡入淡出及元素移动效果</h3>
+        <h3>示例：</h3>
+        <img class= "example" src="./html_示例/css实现简单动画.gif" alt="">
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div id="box1">
+                <p id="p1">这是一段向下运动的文字</p>
+                <p id="p2">这是一段向上运动的文字</p>
+            </div>
+        </div>
+        <h3>知识点：hover&animation&keyframes </h3>
+        <p>hover实现鼠标移动至元素上所产生的效果</p>
+        <p>animation实现动画所需要的时间</p>
+        <p>@keyframes关键帧从0至动画结束中元素的位置及透明度等</p>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    #box1{width: 150px;height: 200px;border: 1px black solid; margin: 20px auto;}
+    #box1 #p1{color: white;background: grey;text-indent: 0;margin: 40px auto;width: 150px;}
+    #box1 #p2{color: white;background: grey;text-indent: 0;margin: 40px auto; width: 150px;}
+
+    #box1:hover #p1{animation: 0.8s upMove_down;}
+    @keyframes upMove_down{
+        0%{transform: translateY(-50px);opacity: 0;}
+        100%{transform: translateY(0);opacity: 1;}
+    }
+
+    #box1:hover #p2{animation: 0.8s downMove_up;}
+    @keyframes downMove_up{
+        0%{transform: translateY(50px);opacity: 0;}
+        100%{transform: translateY(0);opacity: 1;}
+    }
+&lt;/style&gt;
+</code>
+</pre>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;div id="box1"&gt;
+    &lt;p id="p1"&gt;这是一段向下运动的文字&lt;/p&gt;
+    &lt;p id="p2"&gt;这是一段向上运动的文字&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
+    </div>
+</body>
+</html>

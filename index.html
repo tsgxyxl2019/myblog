@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <script type="text/javascript">
+        function display(id){
+            document.getElementById("doc_id").src = "./html/"+id;
+        }
+        $(document).ready(function(){
+            $("li.point_child_child_list").click(function(){
+                $(this).addClass("nav_selected").siblings().removeClass("nav_selected");
+            });
+        });
+        // function iframeLoad()
+        // {
+        //     document.getElementById("doc_id").height=0;
+        //     document.getElementById("doc_id").height=document.getElementById("doc_id").contentWindow.document.body.scrollHeight;
+        // }
+
+
+    </script>
+</head>
+<body>
+    <div class="head">
+        <div class="title l">html+css</div>
+        <div class="menu r">
+            <ul>
+                <li class="l">
+                    <a class="selected" href="#">基础</a>
+                </li>
+                <li class="l">
+                    <a href="#">进阶</a>
+                </li>
+                <li class="l">
+                    <a href="#">高级</a>
+                </li>
+                <li class="l">
+                    <a href="#">通识</a>
+                </li>
+                <li class="l">
+                    <a href="#">精华</a>
+                </li>
+                <li class="l">
+                    <a href="#">进阶</a>
+                </li>
+                <li class="l">
+                    <a href="https://www.w3schools.com/">w3schools</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="nav l">
+        <ul class="point">
+            <li class="point_list" >
+                <a href="#">基础</a> 
+                <ul class="point_child">
+                    <li class="point_child_list">
+                        <a href="#">实例</a>
+                        <ul class="point_child_child">
+                            <li class="point_child_child_list" id = "click_partof_img.html" onclick="display(this.id)">
+                                <a href="#">1.实现图片部分点击</a>
+                            </li>
+                            <li class="point_child_child_list" id = "css_simple_animation.html" onclick="display(this.id)">
+                                <a href="#">2.css实现简单动画</a>
+                            </li>
+                            <li class="point_child_child_list" id = "embed&object.html" onclick="display(this.id)">
+                                <a href="#">3.embed&object使用</a>
+                            </li>
+                            <li class="point_child_child_list" id = "audio&video.html" onclick="display(this.id)">
+                                <a href="#">4.audio&video使用</a>
+                            </li>
+                            <li class="point_child_child_list" id = "Text_annotation&text_direction.html" onclick="display(this.id)">
+                                <a href="#">5.文字注解与文字方向</a>
+                            </li>
+                            <li class="point_child_child_list" id = "link_expanded.html" onclick="display(this.id)">
+                                <a href="#">6.link标签的拓展应用</a>
+                            </li>
+                            <li class="point_child_child_list" id = "meta_expanded.html" onclick="display(this.id)">
+                                <a href="#">7.meta标签的拓展应用</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="quote l"> 
+        <iframe id="doc_id" src="./html./实现图片部分点击.html" frameborder="0" scrolling="no" onload="iframeLoad()"></iframe>
+    </div>
+</body>
+</html>

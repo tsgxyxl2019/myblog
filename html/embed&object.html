@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>引入flash,movie 等插件，移动端很少使用</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <p>embed</p>
+                <embed src="./html_imgs/flash.swf" type="">
+                <p>object & para</p>
+                <object data="" type="">
+                    <param name="movie" value="./html_imgs/flash.swf">
+                </object>
+            </div>
+        </div>
+        <h3>知识点：embed和object</h3>
+        <p>embed和object都表示能够嵌入一些多媒体，如flash动画、插件等。基本使用没有太多区别，主要是为了兼容不同的浏览器而已。</p>
+        <p>object 元素需要配合param 元素一起完成。</p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;div&gt;
+    &lt;embed src="./html_imgs/flash.swf" type=""&gt;
+    &lt;object data="" type=""&gt;
+        &lt;param name="movie" value="./html_imgs/flash.swf"&gt;
+    &lt;/object&gt;
+&lt;/div&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>

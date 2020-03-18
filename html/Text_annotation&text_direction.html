@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <style>
+        #poem{width: 100px;}
+        #poem span{float: right; width: 14px; margin-left: 20px;}
+        #poem:after{content: "";display: block;clear: both;}
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>文字实现拼音上标，文字实现排列方向</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            
+            <div>
+                <h3>1.ruby&rt实现拼音上标</h3>
+                <ruby>
+                    我<rt>wǒ</rt>爱祖国
+                </ruby>
+                <h3>2.bdo实现文字排列方向</h3>
+                <p>
+                    月落乌啼霜满天，<bdo dir="rtl">江枫渔火对愁眠</bdo>
+                </p>
+                <h3>3.css实现文字排列方向</h3>
+                <p>
+                    月落乌啼霜满天，<span style="direction: rtl;unicode-bidi: bidi-override;">江枫渔火对愁眠</span> 
+                </p>
+                <h3>4.浮动实现古诗排列</h3>
+                <div id="poem">
+                        <span>月落乌啼霜满天</span>
+                        <span>江枫渔火对愁眠</span>
+                </div>
+                
+            </div>
+        </div>
+        <h3>知识点：ruby & rt</h3>
+        <p>ruby 标签定义 ruby 注释（中文注音或字符），rt 标签定义字符（中文注音或字符）的解释或发音。</p>
+        <p>bdo 标签可覆盖默认的文本方向。</p>
+        <p>bdo ltr左到右, rtl右到左</p>
+        <p>span direction:ltr左到右, rtl右到左</p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;div&gt;
+    &lt;h3&gt;1.ruby&rt实现拼音上标&lt;/h3&gt;
+    &lt;ruby&gt;
+        我&lt;rt&gt;wǒ&lt;/rt&gt;爱祖国
+    &lt;/ruby&gt;
+    &lt;h3&gt;2.bdo实现文字排列方向&lt;/h3&gt;
+    &lt;p&gt;
+        月落乌啼霜满天，&lt;bdo dir="rtl"&gt;江枫渔火对愁眠&lt;/bdo&gt;
+    &lt;/p&gt;
+    &lt;h3&gt;3.css实现文字排列方向&lt;/h3&gt;
+    &lt;p&gt;
+        月落乌啼霜满天，&lt;span style="direction: rtl;unicode-bidi: bidi-override;"&gt;江枫渔火对愁眠&lt;/span&gt; 
+    &lt;/p&gt;
+    &lt;h3&gt;4.浮动实现古诗排列&lt;/h3&gt;
+    &lt;div id="poem"&gt;
+            &lt;span&gt;月落乌啼霜满天&lt;/span&gt;
+            &lt;span&gt;江枫渔火对愁眠&lt;/span&gt;
+    &lt;/div&gt;
+    
+&lt;/div&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    #poem{width: 100px;}
+    #poem span{float: right; width: 14px; margin-left: 20px;}
+    #poem:after{content: "";display: block;clear: both;}
+&lt;/style&gt;
+</code>
+</pre>
+    </div>
+    
+</body>
+</html>

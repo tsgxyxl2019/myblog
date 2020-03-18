@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>点击图片一部分内容以转链接，空白非设置部分无效</h3>
+        <h3>示例：</h3>
+        <img class= "example" src="./html_示例/图片部分点击示例.gif" alt="">
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <img src="./html_imgs/图片部分点击.jpg" alt="" usemap="#pic">
+                <map name="pic">
+                    <area shape="rect" coords="16 62 146 196" href="https://en.wikipedia.org/wiki/Rectangle" alt="" target="_blank">
+                    <area shape="circle" coords="56 352 45" href="https://en.wikipedia.org/wiki/Circle" alt="" target="_blank">
+                    <area shape="poly" coords="626 10 658 74 732 79 683 130 700 194 631 161 571 194 584 130 534 86 600 76" href="https://en.wikipedia.org/wiki/Polygon" alt="" target="_blank">
+                </map>
+            </div>
+        </div>
+        <h3>知识点：map 与 area</h3>
+        <p >定义一个客户端图像映射。图像映射（image-map）指带有可点击区域的一幅图像。area 元素永远嵌套在 map 元素内部。area 元素可定义图像映射中的区域</p>
+        <p>area 元素的href属性定义区域的URL，shape属性来定义区域的形状，coords属性定义热区的坐标。</p>
+        <p>rect top-left & bottom-right,circle center&radius, poly所有外点</p>
+        <p>img usemap="#id", map name="id"</p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;div&gt;
+    &lt;img src="./html_imgs/图片部分点击.jpg" alt="" usemap="#pic"&gt;
+    &lt;map name="pic"&gt;
+        &lt;area shape="rect" coords="16 62 146 196" href="https://en.wikipedia.org/wiki/Rectangle" alt="" target="_blank"&gt;
+        &lt;area shape="circle" coords="56 352 45" href="https://en.wikipedia.org/wiki/Circle" alt="" target="_blank"&gt;
+        &lt;area shape="poly" coords="626 10 658 74 732 79 683 130 700 194 631 161 571 194 584 130 534 86 600 76" href="https://en.wikipedia.org/wiki/Polygon" alt="" target="_blank"&gt;
+    &lt;/map&gt;
+&lt;/div&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
