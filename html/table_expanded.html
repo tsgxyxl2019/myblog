@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>1.隐藏空单元格</h3>
+        <h3>2.单线边框</h3>
+        <h3>3.单元格斜线</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <section>
+                    <p style="font-weight: bold;text-indent: 0em;">1.原始表格</p>
+                    <table border="1">
+                        <caption>天气预报</caption>
+                        <thead>
+                            <tr>
+                                <th colspan="2">日期</th>
+                                <th>天气情况</th>
+                                <th>出行情况</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">2020年1月1日</td>
+                                <td>白天</td>
+                                <td>晴朗图</td>
+                                <td>天气晴朗，适合出行</td>
+                            </tr>
+                            <tr>
+                                <td>夜晚</td>
+                                <td>晴朗图</td>
+                                <td>天气晴朗，适合出行</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">2020年1月2日</td>
+                                <td>白天</td>
+                                <td>小雨图</td>
+                                <td>天将小雨，出门带伞</td>
+                            </tr>
+                            <tr>
+                                <td>夜晚</td>
+                                <td>小雨图</td>
+                                <td>天气晴朗，适合出行</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <p style="font-weight: bold;text-indent: 0em;">2.隐藏空单元格_单线边框_单元格斜线_表格</p>
+                    <table border="1" style="empty-cells: hide; border-collapse:collapse ;">
+                        <caption>天气预报</caption>
+                        <colgroup>
+                            <col span="2" style="background: green;">
+                            <col span="1" style="background: yellow;">
+                            <col span="1" style="background: pink;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="2">
+                                    <div style="border-top:blue 50px solid;border-left: red 150px solid;position: relative;color: white;">
+                                        <em style="position: absolute;left: -50px;top: -40px; color: white;">详情</em>
+                                        <em style="position: absolute;left: -120px;top: -25px; color: white;">日期</em>
+                                    </div>
+                                </th>
+                                <th>天气情况</th>
+                                <th>出行情况</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">2020年1月1日</td>
+                                <td>白天</td>
+                                <td>晴朗图</td>
+                                <td>天气晴朗，适合出行</td>
+                            </tr>
+                            <tr>
+                                <td>夜晚</td>
+                                <td>晴朗图</td>
+                                <td>天气晴朗，适合出行</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">2020年1月2日</td>
+                                <td>白天</td>
+                                <td>小雨图</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>夜晚</td>
+                                <td></td>
+                                <td>天气晴朗，适合出行</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+        <h3>知识点：</h3>
+        <p style="text-indent: 0em;"> 
+            添加单线 : border-collapse : collapse <br>
+            隐藏空单元 : empty-cells : hide <br>
+            斜线分类 : border   /   rotate <br>
+            列分组 : colgroup  /  col <br>
+        </p>
+        <p style="text-indent: 0em;">border 利用加粗上边框和左边框添加斜线，再绝对定位文字至单元格中</p>
+        <p style="text-indent: 0em;">colgroup 可直接针对整列进行操作</p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;section&gt;
+    &lt;p style="font-weight: bold;text-indent: 0em;"&gt;1.原始表格&lt;/p&gt;
+    &lt;table border="1"&gt;
+        &lt;caption&gt;天气预报&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th colspan="2"&gt;日期&lt;/th&gt;
+                &lt;th&gt;天气情况&lt;/th&gt;
+                &lt;th&gt;出行情况&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td rowspan="2"&gt;2020年1月1日&lt;/td&gt;
+                &lt;td&gt;白天&lt;/td&gt;
+                &lt;td&gt;晴朗图&lt;/td&gt;
+                &lt;td&gt;天气晴朗，适合出行&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;夜晚&lt;/td&gt;
+                &lt;td&gt;晴朗图&lt;/td&gt;
+                &lt;td&gt;天气晴朗，适合出行&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td rowspan="2"&gt;2020年1月2日&lt;/td&gt;
+                &lt;td&gt;白天&lt;/td&gt;
+                &lt;td&gt;小雨图&lt;/td&gt;
+                &lt;td&gt;天将小雨，出门带伞&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;夜晚&lt;/td&gt;
+                &lt;td&gt;小雨图&lt;/td&gt;
+                &lt;td&gt;天气晴朗，适合出行&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/section&gt;
+&lt;section&gt;
+    &lt;p style="font-weight: bold;text-indent: 0em;"&gt;2.隐藏空单元格_单线边框_单元格斜线_表格&lt;/p&gt;
+    &lt;table border="1" style="empty-cells: hide; border-collapse:collapse ;"&gt;
+        &lt;caption&gt;天气预报&lt;/caption&gt;
+        &lt;colgroup&gt;
+            &lt;col span="2" style="background: green;"&gt;
+            &lt;col span="1" style="background: yellow;"&gt;
+            &lt;col span="1" style="background: pink;"&gt;
+        &lt;/colgroup&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th colspan="2"&gt;
+                    &lt;div style="border-top:blue 50px solid;border-left: red 150px solid;position: relative;color: white;"&gt;
+                        &lt;em style="position: absolute;left: -50px;top: -40px; color: white;"&gt;详情&lt;/em&gt;
+                        &lt;em style="position: absolute;left: -120px;top: -25px; color: white;"&gt;日期&lt;/em&gt;
+                    &lt;/div&gt;
+                &lt;/th&gt;
+                &lt;th&gt;天气情况&lt;/th&gt;
+                &lt;th&gt;出行情况&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td rowspan="2"&gt;2020年1月1日&lt;/td&gt;
+                &lt;td&gt;白天&lt;/td&gt;
+                &lt;td&gt;晴朗图&lt;/td&gt;
+                &lt;td&gt;天气晴朗，适合出行&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;夜晚&lt;/td&gt;
+                &lt;td&gt;晴朗图&lt;/td&gt;
+                &lt;td&gt;天气晴朗，适合出行&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td rowspan="2"&gt;2020年1月2日&lt;/td&gt;
+                &lt;td&gt;白天&lt;/td&gt;
+                &lt;td&gt;小雨图&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;夜晚&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;天气晴朗，适合出行&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/section&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
