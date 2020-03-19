@@ -8,6 +8,52 @@
 </head>
 <body>
     <div class="content">
+        <h2>需求:</h2>
+        <h3>input text 实现提示信息</h3>
+        <h3>details 和 summary 实现下拉信息</h3>
+        <h3>progress实现进度条</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <h3>input text 实现提示信息</h3>
+                <section>
+                    <input type="text" list="elems" >
+                    <datalist id="elems">
+                        <option value="abc"></option>
+                        <option value="adc"></option>
+                        <option value="bac"></option>
+                        <option value="bca"></option>
+                    </datalist>
+                </section>
+                <section>
+                    <h3>details 和 summary 实现下拉信息</h3>
+                    <details>
+                        <summary>HTML</summary>
+                            <details style="margin-left: 20px;">
+                                <summary><p>超文本标记语言</p></summary>
+                                    <details style="margin-left: 20px;">
+                                        <p>前段三大技术之一</p>
+                                    </details>
+                            </details>
+                    </details>
+                </section>
+                <section>
+                    <h3>progress实现进度条</h3>
+                    <progress value="4" max="10"></progress>
+                    <h3> meter 实现度量及meter超度量的显示</h3>
+                    <meter value="30" max="100"></meter>
+                    <meter value="70" max="100" low="30" high="50"></meter>
+                </section>
+                <section>
+                    <h3>time语义化标签</h3>
+                    <p>
+                        今天是<time datetime="2020年3月19日16:30:00">情人节</time>，单身狗很开心。
+                        今天是<mark>情人节</mark>，单身狗很开心。
+                    </p>
+                </section>
+                
+            </div>
+        </div>
         <h3>知识点：</h3>
         <p style="text-indent: 0em;">
             header : 页眉 <br>
@@ -29,7 +75,48 @@
             progress / meter :  定义进度条 / 定义度量范围      <br>
             time : 定义日期或时间       <br>
             mark : 带有记号的文本<br>
-        </p>        
+        </p>    
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;h3&gt;input text 实现提示信息&lt;/h3&gt;
+&lt;section&gt;
+    &lt;input type="text" list="elems" &gt;
+    &lt;datalist id="elems"&gt;
+        &lt;option value="abc"&gt;&lt;/option&gt;
+        &lt;option value="adc"&gt;&lt;/option&gt;
+        &lt;option value="bac"&gt;&lt;/option&gt;
+        &lt;option value="bca"&gt;&lt;/option&gt;
+    &lt;/datalist&gt;
+&lt;/section&gt;
+&lt;section&gt;
+    &lt;h3&gt;details 和 summary 实现下拉信息&lt;/h3&gt;
+    &lt;details&gt;
+        &lt;summary&gt;HTML&lt;/summary&gt;
+            &lt;details style="margin-left: 20px;"&gt;
+                &lt;summary&gt;&lt;p&gt;超文本标记语言&lt;/p&gt;&lt;/summary&gt;
+                    &lt;details style="margin-left: 20px;"&gt;
+                        &lt;p&gt;前段三大技术之一&lt;/p&gt;
+                    &lt;/details&gt;
+            &lt;/details&gt;
+    &lt;/details&gt;
+&lt;/section&gt;
+&lt;section&gt;
+    &lt;h3&gt;progress实现进度条&lt;/h3&gt;
+    &lt;progress value="4" max="10"&gt;&lt;/progress&gt;
+    &lt;h3&gt; meter 实现度量及meter超度量的显示&lt;/h3&gt;
+    &lt;meter value="30" max="100"&gt;&lt;/meter&gt;
+    &lt;meter value="70" max="100" low="30" high="50"&gt;&lt;/meter&gt;
+&lt;/section&gt;
+&lt;section&gt;
+    &lt;h3&gt;time语义化标签&lt;/h3&gt;
+    &lt;p&gt;
+        今天是&lt;time datetime="2020年3月19日16:30:00"&gt;情人节&lt;/time&gt;，单身狗很开心。
+        今天是&lt;mark&gt;情人节&lt;/mark&gt;，单身狗很开心。
+    &lt;/p&gt;
+&lt;/section&gt;
+</code>
+</pre>
     </div>
     
 </body>
