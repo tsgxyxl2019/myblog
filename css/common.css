@@ -18,7 +18,7 @@ a{text-decoration: none;color: #646464;}
 .head .menu ul li a{color: white;}
 .head .menu ul li .selected {border-bottom: 2px solid #46bd87; }
 
-.nav{width: 320px;overflow-y: scroll; height: 880px;position: fixed;margin-top: 58px;}
+.nav{width: 320px;overflow-y: scroll; height: 880px;position: fixed;margin-top: 58px;background: white;}
 .nav .point{margin-top: 30px;margin-left: 25px;}
 .nav .point .point_list a{font-weight: bold;font-size: 16px;line-height: 16px;}
 .nav .point .point_list .point_child{margin-top: 22px;margin-left: 12px;}
@@ -29,11 +29,11 @@ a{text-decoration: none;color: #646464;}
 .nav .point .point_list .point_child .point_child_list .point_child_child .nav_selected a{font-weight: bold;}
 .nav .nav_selected:before{content: "";display: block;width: 4px; height: 16px; background: #3eaf7c;float: left;margin-left: -20px;}
 
+#iframe_content{margin-left:320px;background: rgb(233, 227, 227);width: calc(100% - 320px);}
+#iframe_content .quote{width: 800px; margin:58px auto ;}
+/*********************************   this is for online-post  *************************/
+/* #iframe_content .quote iframe{width: 100%;min-height: 500px; margin-bottom: 50px;} */
+/*********************************   this is for online-post **************************/
 
-.quote{width: 800px; margin-left: 750px;margin-top: 58px;}
-/***********************   this is for online-post  *******************/
-/* .quote iframe{width: 100%;min-height: 500px; margin-bottom: 50px;} */
-/***********************   this is for online-post ********************/
 
-
-.quote iframe{width: 100%;height: 5000px; margin-bottom: 50px;}
+#iframe_content .quote iframe{width: 100%;height: 5000px; margin-bottom: 50px;}
