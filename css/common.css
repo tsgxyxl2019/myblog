@@ -29,10 +29,10 @@ a{text-decoration: none;color: #646464;}
 .nav .point .point_list .point_child .point_child_list .point_child_child .nav_selected a{font-weight: bold;}
 .nav .nav_selected:before{content: "";display: block;width: 4px; height: 16px; background: #3eaf7c;float: left;margin-left: -20px;}
 
-#iframe_content{margin-left:320px;background: rgb(233, 227, 227);width: calc(100% - 320px);}
+#iframe_content{margin-left:320px;background: rgb(233, 227, 227);width: calc(100% - 320px); min-height:940px;}
 #iframe_content .quote{width: 800px; margin:58px auto ;}
 /*********************************   this is for online-post  *************************/
-/* #iframe_content .quote iframe{width: 100%;min-height: 500px; margin-bottom: 50px;} */
+/* #iframe_content .quote iframe{width: 100%;min-height: 880px; margin-bottom: 50px;} */
 /*********************************   this is for online-post **************************/
 
 
