@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <style>
+        #original{margin-right: 200px;margin-left: 100px;}
+        #changed_checked #checkbox_label input{display:none;}
+        #changed_checked #checkbox_label div{background: url('./html_imgs/form_expanded_checkbox.png') no-repeat 0px -28px ;width: 28px;height: 28px;}
+        #changed_checked #checkbox_label input:checked + div{background-position: 0 0 ;}
+        #changed_checked #file_label input{display: none;}
+        #changed_checked #file_label div{width: 86px;height: 34px;background: url('./html_imgs/form_expanded_upload.png');}
+        #changed_checked #file_label div:hover{cursor: pointer;}
+        .l{float: left;}
+        .clear:after{content: "";display: block;clear: both;}
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>美化表单的控件</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div class="clear">
+                <section id="original" class="l"> 
+                    <p style="text-indent: 0em;">1. original</p>
+                    <p>1.1 checkbox<br></p>
+                    <label>
+                        <input type="checkbox">
+                    </label>
+                    <br>
+                    <p>1.2 file_upload<br></p>
+                    <label>
+                        <input type="file" name="" id="">
+                    </label>
+                </section>
+                <section id="changed_checked" class="l">
+                    <p style="text-indent: 0em;">2. changed</p>
+                    <p>1.1 checkbox<br></p>
+                    <label id="checkbox_label">
+                        <input  type="checkbox">
+                        <div></div>
+                    </label>
+                    <p>1.2 file_upload<br></p>
+                    <label id="file_label">
+                        <input type="file" name="" id="">
+                        <div></div>
+                    </label>
+
+                </section>
+            </div>
+        </div>
+        <h3>知识点：</h3>
+        <p>美化表单控件: <br> 1: 伪类(label + checked) 使得里面的div也有input的功能，+ 代表里面的子孙元素， checked为div的状态</p>
+        <p>2: position + opacity</p>
+        <p>利用绝对定位使得新设计的上面有一层大小一致的原样式标签，并且原样式标签为透明，ps：障眼法，太蠢，不用</p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;div class="test_area"&gt;
+    &lt;h3&gt;Test_area：&lt;/h3&gt;
+    &lt;div class="clear"&gt;
+        &lt;section id="original" class="l"&gt; 
+            &lt;p style="text-indent: 0em;"&gt;1. original&lt;/p&gt;
+            &lt;p&gt;1.1 checkbox&lt;br&gt;&lt;/p&gt;
+            &lt;label&gt;
+                &lt;input type="checkbox"&gt;
+            &lt;/label&gt;
+            &lt;br&gt;
+            &lt;p&gt;1.2 file_upload&lt;br&gt;&lt;/p&gt;
+            &lt;label&gt;
+                &lt;input type="file" name="" id=""&gt;
+            &lt;/label&gt;
+        &lt;/section&gt;
+        &lt;section id="changed_checked" class="l"&gt;
+            &lt;p style="text-indent: 0em;"&gt;2. changed&lt;/p&gt;
+            &lt;p&gt;1.1 checkbox&lt;br&gt;&lt;/p&gt;
+            &lt;label id="checkbox_label"&gt;
+                &lt;input  type="checkbox"&gt;
+                &lt;div&gt;&lt;/div&gt;
+            &lt;/label&gt;
+            &lt;p&gt;1.2 file_upload&lt;br&gt;&lt;/p&gt;
+            &lt;label id="file_label"&gt;
+                &lt;input type="file" name="" id=""&gt;
+                &lt;div&gt;&lt;/div&gt;
+            &lt;/label&gt;
+
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    #original{margin-right: 200px;margin-left: 100px;}
+    #changed_checked #checkbox_label input{display:none;}
+    #changed_checked #checkbox_label div{background: url('./html_imgs/form_expanded_checkbox.png') no-repeat 0px -28px ;width: 28px;height: 28px;}
+    #changed_checked #checkbox_label input:checked + div{background-position: 0 0 ;}
+    #changed_checked #file_label input{display: none;}
+    #changed_checked #file_label div{width: 86px;height: 34px;background: url('./html_imgs/form_expanded_upload.png');}
+    #changed_checked #file_label div:hover{cursor: pointer;}
+    .l{float: left;}
+    .clear:after{content: "";display: block;clear: both;}
+&lt;/style&gt;
+</code>
+</pre>
+    </div>
+    
+</body>
+</html>
