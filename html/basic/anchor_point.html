@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>锚点部分固定于屏幕而非页面，锚点指向文档部分</h3>
+        <h3>示例：</h3>
+        <img class= "example" src="./html_示例/sticky_ahcor_point.gif" alt="">
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <iframe src="./sticky_ahcor_point.html" frameborder="0" width="750px" height="1000px" scrolling="no" ></iframe>
+            </div>
+        </div>
+        <h3>知识点：</h3>
+        <p></p>
+        <p></p>
+        <p>iframe 引用时,sticky标签不起作用(未解决)</p>
+        <p></p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;div id="dir"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href="#jianjie"&gt;简介&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="#fazhan"&gt;发展历程&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="#xintexing"&gt;新特性&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="#zhineng"&gt;智能表单&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    body{height: 2200px;}
+    #main{width: 600px;}
+    p{line-height: 50px;}
+
+    #dir{position: absolute; top: 20px;left:600px;border: 1px solid transparent; width: 200px;height:2200px;}
+    #dir ul{position: sticky;top: 50px; margin-top: 200px;}
+&lt;/style&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
