@@ -1,25 +1,36 @@
 
-
-<!DOCTYPE html>
 <html>
-<head>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("Li").click(function(){
-    $(this).hide();
+  <head>
+  </head>
+  <body>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(function(){
+      $("#list01 input[type=checkbox]").click(function(){
+          $(this).parent().next().toggle();
+          console.log($(this).attr("id"));
+          //这是打印了点击元素的id
+          console.log($(this).parent().attr("id"));
+          //这是打印了，点击元素父元素的id
+          console.log($(this).parent().next().attr("id"));
+          //这是打印了，input元素的父元素dt元素的，相邻的后面的兄弟元素的id；
+      });
+      $("#list01 dd").hide();
   });
-});
-</script>
-</head>
-<body>
-<p>如果您点击我，我会消失。</p>
-<p>点击我，我会消失。</p>
-<p>也要点击我哦。</p>
-<UL>
-    <LI>1</LI>
-    <LI>2</LI>
-    <LI>3</LI>
-</UL>
-</body>
-</html>
+  </script>
+  <dl id="list01">
+      <dt id = "11">
+          <input type="checkbox" id = "111">名
+      </dt>
+      <dd id = "12">田</dd>
+      <dt id = "21">
+          <input type="checkbox" id = "211">所属
+      </dt>
+      <dd id = "22">大学</dd>
+      <dt id = "31">
+          <input type="checkbox" id = "311">生年月日
+      </dt>
+      <dd id = "32">1999年3 月3 日</dd>
+  </dl>
+  </body>
+  </html>
