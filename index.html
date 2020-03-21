@@ -8,9 +8,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/common.css">
     <script type="text/javascript">
-        function display(id){
-            document.getElementById("doc_id").src = "./html/"+id;
-        }
         $(document).ready(function(){
             $("li.point_child_child_list").click(function(){
                 $(this).addClass("nav_selected").siblings().removeClass("nav_selected");
@@ -20,11 +17,14 @@
                     $(this).parents(".point").children(".basic").children(".point_child").children(".point_child_list").children(".point_child_child").children(".point_child_child_list").removeClass("nav_selected");
                     $(this).parents(".point").children(".basic").removeClass("nav_selected");
                     $(this).parents(".point").children(".basic").children(".point_child").children(".point_child_list").removeClass("nav_selected");
+                    document.getElementById("doc_id").src = "./html/advanced/" + $(this).attr("id");
+                    
 
                 } else {
                     $(this).parents(".point").children(".advanced").children(".point_child").children(".point_child_list").children(".point_child_child").children(".point_child_child_list").removeClass("nav_selected");
                     $(this).parents(".point").children(".advanced").removeClass("nav_selected");
                     $(this).parents(".point").children(".advanced").children(".point_child").children(".point_child_list").removeClass("nav_selected");
+                    document.getElementById("doc_id").src = "./html/basic/" + $(this).attr("id");
                 }
                 
             });
@@ -78,10 +78,10 @@
                     <li class="point_child_list">
                         <a href="#">1.1 实例</a>
                         <ul class="point_child_child">
-                            <li class="point_child_child_list" id = ".html" onclick="display(this.id)">
-                                <a href="#">1.1.1 未完待续</a>
+                            <li class="point_child_child_list" id = "anchor_point.html"  >
+                                <a href="#">1.1.1 html实现简单锚点</a>
                             </li>
-                            <li class="point_child_child_list" id = ".html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = ".html"  >
                                 <a href="#">1.1.2 未完待续</a>
                             </li>
                         </ul>
@@ -94,37 +94,37 @@
                     <li class="point_child_list">
                         <a href="#">2.1 实例</a>
                         <ul class="point_child_child">
-                            <li class="point_child_child_list nav_selected" id = "click_partof_img.html" onclick="display(this.id)">
+                            <li class="point_child_child_list nav_selected" id = "click_partof_img.html"  >
                                 <a href="#">2.1.1 实现图片部分点击</a>
                             </li>
-                            <li class="point_child_child_list" id = "css_simple_animation.html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = "css_simple_animation.html"  >
                                 <a href="#">2.1.2 css实现简单动画</a>
                             </li>
-                            <li class="point_child_child_list" id = "embed&object.html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = "embed&object.html"  >
                                 <a href="#">2.1.3 embed&object使用</a>
                             </li>
-                            <li class="point_child_child_list" id = "audio&video.html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = "audio&video.html"  >
                                 <a href="#">2.1.4 audio&video使用</a>
                             </li>
-                            <li class="point_child_child_list" id = "Text_annotation&text_direction.html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = "Text_annotation&text_direction.html"  >
                                 <a href="#">2.1.5 文字注解与文字方向</a>
                             </li>
-                            <li class="point_child_child_list" id = "link_expanded.html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = "link_expanded.html"  >
                                 <a href="#">2.1.6 link标签的拓展应用</a>
                             </li>
-                            <li class="point_child_child_list" id = "meta_expanded.html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = "meta_expanded.html"  >
                                 <a href="#">2.1.7 meta标签的拓展应用</a>
                             </li>
-                            <li class="point_child_child_list" id = "html5_newLabel.html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = "html5_newLabel.html"  >
                                 <a href="#">2.1.8 html5新语义化标签</a>
                             </li>
-                            <li class="point_child_child_list" id = "table_expanded.html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = "table_expanded.html"  >
                                 <a href="#">2.1.9 table标签的拓展应用</a>
                             </li>
-                            <li class="point_child_child_list" id = "form_butify.html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = "form_butify.html"  >
                                 <a href="#">2.1.10 form标签的拓展美化</a>
                             </li>
-                            <li class="point_child_child_list" id = "form_expanded.html" onclick="display(this.id)">
+                            <li class="point_child_child_list" id = "form_expanded.html"  >
                                 <a href="#">2.1.11 form标签的拓展应用</a>
                             </li>
                         </ul>
@@ -136,7 +136,7 @@
 
     <section id="iframe_content" class="l">
         <div class="quote"> 
-            <iframe id="doc_id" src="./html/click_partof_img.html" frameborder="0" scrolling="no" onload="iframeLoad()"></iframe>
+            <iframe id="doc_id" src="./html/advanced/click_partof_img.html" frameborder="0" scrolling="no" onload="iframeLoad()"></iframe>
         </div>
     </section>
 </body>
