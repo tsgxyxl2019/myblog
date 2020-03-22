@@ -68,6 +68,33 @@
                         <input style="margin-top: 50px;" type="submit">
                     </form>
                 </section>
+                <section class="clear">
+                    <p style="font-weight: bold;">3. fieldset & legend</p>
+                    <fieldset style="margin-left: 30px; margin-bottom: 30px;">
+                        <legend>登录</legend>
+                        <p>
+                            用户名：<input type="text">
+                        </p>
+                        <p>
+                            密码: <input style="margin-left:23px;" type="text">
+                        </p>
+                    </fieldset>
+                </section>
+                <section class="clear">
+                    <p style="font-weight: bold;">4. optgroup 用于select 分组</p>
+                    <select name="" id="">
+                        <optgroup label="水果">
+                            <option value="">苹果</option>
+                            <option value="">香蕉</option>
+                            <option value="">梨子</option>
+                        </optgroup>
+                        <optgroup label="蔬菜">
+                            <option value="">白菜</option>
+                            <option value="">青菜</option>
+                            <option value="">芹菜</option>
+                        </optgroup>
+                    </select>
+                </section>
             </div>
         </div>
         <h3>知识点：</h3>
@@ -90,7 +117,11 @@
             pattern  :  正则验证 <br>
             method  :  数据传输方式 <br>
             enctype  :  数据传输类型 <br>
-            name / value  :  数据的键值对</p>
+            name / value  :  数据的键值对  <br>
+            fieldset  :  表单内元素分组 <br>
+            legend  :  为fieldset元素定义标题 <br>
+            optgroup  :  定义选项组 <br>
+        </p>
         <h3>html源代码：</h3>
 <pre>
 <code>
@@ -144,6 +175,33 @@
         &lt;/section&gt;
         &lt;input style="margin-top: 50px;" type="submit"&gt;
     &lt;/form&gt;
+&lt;/section&gt;
+&lt;section class="clear"&gt;
+    &lt;p style="font-weight: bold;"&gt;3. fieldset & legend&lt;/p&gt;
+    &lt;fieldset style="margin-left: 30px; margin-bottom: 30px;"&gt;
+        &lt;legend&gt;登录&lt;/legend&gt;
+        &lt;p&gt;
+            用户名：&lt;input type="text"&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            密码: &lt;input style="margin-left:23px;" type="text"&gt;
+        &lt;/p&gt;
+    &lt;/fieldset&gt;
+&lt;/section&gt;
+&lt;section class="clear"&gt;
+    &lt;p style="font-weight: bold;"&gt;4. optgroup 用于select 分组&lt;/p&gt;
+    &lt;select name="" id=""&gt;
+        &lt;optgroup label="水果"&gt;
+            &lt;option value=""&gt;苹果&lt;/option&gt;
+            &lt;option value=""&gt;香蕉&lt;/option&gt;
+            &lt;option value=""&gt;梨子&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="蔬菜"&gt;
+            &lt;option value=""&gt;白菜&lt;/option&gt;
+            &lt;option value=""&gt;青菜&lt;/option&gt;
+            &lt;option value=""&gt;芹菜&lt;/option&gt;
+        &lt;/optgroup&gt;
+    &lt;/select&gt;
 &lt;/section&gt;
 </code>
 </pre>
