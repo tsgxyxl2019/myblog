@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./html_css/html_css.css">
     <title>Document</title>
+    <style>
+        .l{float: left;margin-right: 50px;}
+        .clear:after{content: "";display: block;clear: both;}
+    </style>
 </head>
 <body>
     <div class="content">
@@ -13,31 +17,55 @@
         <div class="test_area">
             <h3>Test_area：</h3>
             <div>
-                <section>
-                    <form style="margin-left: 30px;" action="https://www.baidu.com">
-                        <p>email</p>
-                        <input type="email">
-                        <p>url</p>
-                        <input type="url">
-                        <p>number</p>
-                        <input type="number">
-                        <p>range</p>
-                        <input type="range" name="" id="">
-                        <p>date</p>
-                        <input type="date" name="" id="">
-                        <p>month</p>
-                        <input type="month" name="" id="">
-                        <p>week</p>
-                        <input type="week" name="" id="">
-                        <p>search</p>
-                        <input type="search" name="" id="">
-                        <p>color</p>
-                        <input type="color" name="" id="">
-                        <p>tel</p>
-                        <input type="tel" name="" id="">
-                        <p>time</p>
-                        <input type="time" name="" id="">
-                        <input type="submit" name="" id="">
+                <p style="font-weight: bold;">1. new_function</p>
+                <section class="clear">
+                    <form style="margin-left: 30px; margin-bottom: 30px;" action="https://www.baidu.com" class="clear">
+                        <section class="l">
+                            <p>email</p>
+                            <input type="email">
+                            <p>url</p>
+                            <input type="url">
+                            <p>number</p>
+                            <input type="number">
+                            <p>range</p>
+                            <input type="range" name="" id="">
+                            <p>date</p>
+                            <input type="date" name="" id="">
+                            <p>month</p>
+                            <input type="month" name="" id="">
+                        </section>
+                        <section class="l">
+                            <p>week</p>
+                            <input type="week" name="" id="">
+                            <p>search</p>
+                            <input type="search" name="" id="">
+                            <p>color</p>
+                            <input type="color" name="" id="">
+                            <p>tel</p>
+                            <input type="tel" name="" id="">
+                            <p>time</p>
+                            <input type="time" name="" id="">
+                            <br>
+                        </section>
+                        <input style="margin-top: 50px;" type="submit" name="" id="">
+                    </form>
+                </section>
+                <p style="font-weight: bold;">2. new_attribute</p>
+                <section class="clear">
+                    <form action="https://www.google.com" style="margin-left: 30px; margin-bottom: 30px;">
+                        <section>
+                            <p>autocompelete on</p>
+                            <input type="text" name="username" id="" autocomplete="on">
+                            <p>autocompelete off</p>
+                            <input type="text" name="username" id="" autocomplete="off">
+                            <p>autofocus</p>
+                            <input type="text" name="username" id="" autofocus>
+                            <p>required</p>
+                            <input type="text" name="username" id="" required>
+                            <p>pattern 正则匹配数字</p>
+                            <input type="text" name="username" id="" pattern="\d+">
+                        </section>
+                        <input style="margin-top: 50px;" type="submit">
                     </form>
                 </section>
             </div>
@@ -54,36 +82,67 @@
             color  :  颜色控件 <br> 
             tel  :  电话号码输入框  默认移动端端调起数字键盘 <br>
             time  :  时间控件</p>
-        <p></p>
-        <p></p>
+        <p>新的表单属性	</p>
+        <p style="margin-left: 20px;"> 
+            autocomplete  :  自动完成 default : on <br>
+            autofocus  :  自动获得焦点 iframe引用无效(未解决) <br>
+            required  :  不能为空 <br>
+            pattern  :  正则验证 <br>
+            method  :  数据传输方式 <br>
+            enctype  :  数据传输类型 <br>
+            name / value  :  数据的键值对</p>
         <h3>html源代码：</h3>
 <pre>
 <code>
-&lt;section&gt;
-    &lt;form style="margin-left: 30px;" action="https://www.baidu.com"&gt;
-        &lt;p&gt;email&lt;/p&gt;
-        &lt;input type="email"&gt;
-        &lt;p&gt;url&lt;/p&gt;
-        &lt;input type="url"&gt;
-        &lt;p&gt;number&lt;/p&gt;
-        &lt;input type="number"&gt;
-        &lt;p&gt;range&lt;/p&gt;
-        &lt;input type="range" name="" id=""&gt;
-        &lt;p&gt;date&lt;/p&gt;
-        &lt;input type="date" name="" id=""&gt;
-        &lt;p&gt;month&lt;/p&gt;
-        &lt;input type="month" name="" id=""&gt;
-        &lt;p&gt;week&lt;/p&gt;
-        &lt;input type="week" name="" id=""&gt;
-        &lt;p&gt;search&lt;/p&gt;
-        &lt;input type="search" name="" id=""&gt;
-        &lt;p&gt;color&lt;/p&gt;
-        &lt;input type="color" name="" id=""&gt;
-        &lt;p&gt;tel&lt;/p&gt;
-        &lt;input type="tel" name="" id=""&gt;
-        &lt;p&gt;time&lt;/p&gt;
-        &lt;input type="time" name="" id=""&gt;
-        &lt;input type="submit" name="" id=""&gt;
+&lt;p style="font-weight: bold;"&gt;1. new_function&lt;/p&gt;
+&lt;section class="clear"&gt;
+    &lt;form style="margin-left: 30px; margin-bottom: 30px;" action="https://www.baidu.com" class="clear"&gt;
+        &lt;section class="l"&gt;
+            &lt;p&gt;email&lt;/p&gt;
+            &lt;input type="email"&gt;
+            &lt;p&gt;url&lt;/p&gt;
+            &lt;input type="url"&gt;
+            &lt;p&gt;number&lt;/p&gt;
+            &lt;input type="number"&gt;
+            &lt;p&gt;range&lt;/p&gt;
+            &lt;input type="range" name="" id=""&gt;
+            &lt;p&gt;date&lt;/p&gt;
+            &lt;input type="date" name="" id=""&gt;
+            &lt;p&gt;month&lt;/p&gt;
+            &lt;input type="month" name="" id=""&gt;
+        &lt;/section&gt;
+        &lt;section class="l"&gt;
+            &lt;p&gt;week&lt;/p&gt;
+            &lt;input type="week" name="" id=""&gt;
+            &lt;p&gt;search&lt;/p&gt;
+            &lt;input type="search" name="" id=""&gt;
+            &lt;p&gt;color&lt;/p&gt;
+            &lt;input type="color" name="" id=""&gt;
+            &lt;p&gt;tel&lt;/p&gt;
+            &lt;input type="tel" name="" id=""&gt;
+            &lt;p&gt;time&lt;/p&gt;
+            &lt;input type="time" name="" id=""&gt;
+            &lt;br&gt;
+        &lt;/section&gt;
+        &lt;input style="margin-top: 50px;" type="submit" name="" id=""&gt;
+    &lt;/form&gt;
+&lt;/section&gt;
+&lt;p style="font-weight: bold;"&gt;2. new_attribute&lt;/p&gt;
+&lt;section class="clear"&gt;
+    &lt;form action="https://www.google.com" style="margin-left: 30px; margin-bottom: 30px;"&gt;
+        &lt;section&gt;
+            &lt;p&gt;autocompelete on&lt;/p&gt;
+            &lt;input type="text" name="username" id="" autocomplete="on"&gt;
+            &lt;p&gt;autocompelete off&lt;/p&gt;
+            &lt;input type="text" name="username" id="" autocomplete="off"&gt;
+            &lt;p&gt;autofocus&lt;/p&gt;
+            &lt;input type="text" name="username" id="" autofocus&gt;
+            &lt;p&gt;required&lt;/p&gt;
+            &lt;input type="text" name="username" id="" required&gt;
+            &lt;p&gt;pattern 正则匹配数字&lt;/p&gt;
+            &lt;input type="text" name="username" id="" pattern="\d+"&gt;
+        &lt;/section&gt;
+        &lt;input style="margin-top: 50px;" type="submit"&gt;
     &lt;/form&gt;
 &lt;/section&gt;
 </code>
