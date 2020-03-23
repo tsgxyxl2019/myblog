@@ -126,15 +126,16 @@
             </div>
         </div>
         <h3>知识点：BFC规范</h3>
-        <p>触发BFC规范的元素，可以形成一个独立的容器。不受到外界的影响。从而解决布局的问题</p>
-        <p>浮动元素：float 除 none 以外的值 <br>1
+        <p>1. Formatting context(格式化上下文) 是 W3C CSS2.1 规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。 BFC 即 Block Formatting Contexts (块级格式化上下文) ，它属于上述中的其中一种规范。具有 BFC 特性的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 具有普通容器所没有的一些特性。</p>
+        <p>2. 触发BFC规范的元素，可以形成一个独立的容器。不受到外界的影响。从而解决布局的问题</p>
+        <p>3. 浮动元素：float 除 none 以外的值 <br>
             绝对定位元素：position (absolute、fixed) 除了相对定位 <br> 
             display 为 inline-block、table-cells、flex <br>
             overflow 除了 visible 以外的值 (hidden、auto、scroll) <br>
          
         </p>
-        <p>解决浮动问题请用clear伪类，不要给父容器加BFC规范！！！</p>
-        <p>两列元素一般用处很多，比如系统操作后台等等</p>
+        <p>4. 解决浮动问题请用clear伪类，不要给父容器加BFC规范！！！</p>
+        <p>5. 两列元素一般用处很多，比如系统操作后台等等</p>
         <h3>html源代码：</h3>
 <pre>
 <code>
