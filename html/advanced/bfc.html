@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <style>
+        .l{float: left;margin-right: 30px;}
+        .clear:after{content: "";display: block;clear: both;}
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>利用bfc规范解决</h3>
+        <p>1. 解决margin叠加问题。</p>
+        <p>2. 解决margin传递问题。</p>
+        <p>3. 解决子元素浮动,父元素高度问题。</p>
+        <p>4. 实现两列元素,元素之间不覆盖</p>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <section>
+                    <p style="font-weight: bold;">1.1 不符合BFC规范引发的margin叠加问题</p>
+                    <p>此时box1 下边距30px box2 上边距50px box1与box2 间距= max(30px,50px)</p>
+                    <div class="box1" style="width: 100px;height: 100px;margin-bottom: 30px;background: blue;"></div>
+                    <div class="box2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"></div>
+                </section>
+                <section class="clear">
+                    <p style="font-weight: bold;">1.2 BFC规范解决margin叠加问题：overflow=hidden or display = flex </p>
+                    <p>此时box1 下边距30px box2 上边距50px box1与box2 间距=30px+50px</p>
+                    <section class="l">
+                        <p style="font-weight: bold; margin-left: 20px;">方法1:</p>
+                        <div style="overflow: hidden;">
+                            <div class="box1" style="width: 100px;height: 100px;margin-bottom: 30px;background: blue;"></div>
+                        </div>
+                        <div style="overflow: hidden;">
+                            <div class="box2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"></div>
+                        </div>
+                    </section>
+                    <section class="l">
+                        <p style="font-weight: bold; margin-left: 20px;">方法2:</p>
+                        <div style="display: flex;">
+                            <div class="box1" style="width: 100px;height: 100px;margin-bottom: 30px;background: blue;"></div>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="box2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"></div>
+                        </div>
+                    </section>
+                </section>
+                <section style="border: 1px solid black; margin-top: 20px;">
+                    <p style="font-weight: bold;">2.1 不符合BFC规范引发的margin传递问题</p>
+                    <p>此时div2的margin-top=50px,div2虽向下偏移50px，div1同时也向下偏移50px</p>
+                    <div class="div1" style="width: 200px;height: 200px;background: blue;">
+                        <div class="div2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"></div>
+                    </div>
+                </section>
+                <section class="clear" style="border: 1px solid black; margin-top: 20px;">
+                    <p style="font-weight: bold;">2.2 BFC规范解决margin传递问题：overflow=hidden, auto, scroll or position = absolute、fixed </p>
+                    <p>此时div2的margin-top=50px,div2向下偏移50px，div1在文档流中不受影响</p>
+                    <section class="l">
+                        <p style="font-weight: bold; margin-left: 20px;">方法1:</p>
+                        <div class="div1" style="width: 200px;height: 200px;background: blue; overflow: hidden;">
+                            <div class="div2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"></div>
+                        </div>
+                    </section>
+                    <section class="l">
+                        <p style="font-weight: bold; margin-left: 20px;">方法2:</p>
+                        <div class="div1" style="width: 200px;height: 200px;background: blue; position: absolute;">
+                            <div class="div2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"></div>
+                        </div>
+                    </section>
+                </section>
+                <section style="margin-top: 20px;" class="clear">
+                    <p style="font-weight: bold;">3.1 不符合BFC规范引发的子元素浮动使得父容器高度出现问题</p>
+                    <p>原始父容器高度由子元素高度决定</p>
+                    <div class="parent" style="width: 200px;height:auto; border:1px solid red;">
+                        <div class="child" style="width: 100px;height: 100px;background: blue;"></div>
+                    </div>
+                    <p>此时child添加float= left,parent失去高度</p>
+                    <div class="parent" style="width: 200px;height:auto; border:1px solid red;">
+                        <div class="child" style="width: 100px;height: 100px;background: blue; float: left;"></div>
+                    </div>
+                </section>
+                <section class="clear" style="margin-top: 20px;">
+                    <p style="font-weight: bold;">3.2 BFC规范解决子元素浮动,父元素高度问题，overflow=hidden, auto, scroll or position = absolute、fixed or display = inline-block or float</p>
+                    <p>此时child的float-left,parent高度不受影响</p> 
+                    <section class="l">
+                        <p style="font-weight: bold; margin-left: 20px;">方法1:</p>
+                        <div class="parent" style="width: 200px;height:auto; border:1px solid red; display: inline-block;">
+                            <div class="child" style="width: 100px;height: 100px;background: blue; float: left;"></div>
+                        </div>
+                    </section>
+                    <section class="l">
+                        <p style="font-weight: bold; margin-left: 20px;">方法2:</p>
+                        <div class="parent" style="width: 200px;height:auto; border:1px solid red; overflow: hidden;">
+                            <div class="child" style="width: 100px;height: 100px;background: blue; float: left;"></div>
+                        </div>
+                    </section>
+                </section>
+                <section style="margin-top: 20px;" class="clear">
+                    <p style="font-weight: bold;">4.1 实现两列元素,元素之间不覆盖</p>
+                    <p>元素1左浮动，会覆盖元素2部分内容</p>
+                    <div class="left_elem" style="width: 200px;height: 200px;background: red; float: left;">目录页
+                        <p style="margin-left: 20px;">第一页 <br> 第二页 <br> 第三页 <br> 第四页 <br> 第五页 <br>
+                        </p>
+                    </div>
+                    <div class="right_elem" style="width: 500px;height: 300px;background: blue; color: white;">内容页
+                        <p style="margin-left: 20px; color: white;">左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！
+                        </p>
+                    </div>
+                </section>
+                <section class="clear" style="margin-top: 20px;">
+                    <p style="font-weight: bold;">4.2 BFC规范实现两列元素,元素之间不覆盖，后一元素overflow=hidden, auto, scroll or position = absolute、fixed or display = inline-block or float</p>
+                    <p>此时right_elem摆脱left_elem的干扰,实现元素并排</p> 
+                    <div class="left_elem" style="width: 200px;height: 200px;background: red; float: left;">目录页
+                        <p style="margin-left: 20px;">第一页 <br> 第二页 <br> 第三页 <br> 第四页 <br> 第五页 <br>
+                        </p>
+                    </div>
+                    <div class="right_elem" style="width: 500px;height: 300px;background: blue; color: white; overflow: hidden;">内容页
+                        <p style="margin-left: 20px; color: white;">左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <h3>知识点：BFC规范</h3>
+        <p>触发BFC规范的元素，可以形成一个独立的容器。不受到外界的影响。从而解决布局的问题</p>
+        <p>浮动元素：float 除 none 以外的值 <br>1
+            绝对定位元素：position (absolute、fixed) 除了相对定位 <br> 
+            display 为 inline-block、table-cells、flex <br>
+            overflow 除了 visible 以外的值 (hidden、auto、scroll) <br>
+         
+        </p>
+        <p>解决浮动问题请用clear伪类，不要给父容器加BFC规范！！！</p>
+        <p>两列元素一般用处很多，比如系统操作后台等等</p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;section&gt;
+    &lt;p style="font-weight: bold;"&gt;1.1 不符合BFC规范引发的margin叠加问题&lt;/p&gt;
+    &lt;p&gt;此时box1 下边距30px box2 上边距50px box1与box2 间距= max(30px,50px)&lt;/p&gt;
+    &lt;div class="box1" style="width: 100px;height: 100px;margin-bottom: 30px;background: blue;"&gt;&lt;/div&gt;
+    &lt;div class="box2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="clear"&gt;
+    &lt;p style="font-weight: bold;"&gt;1.2 BFC规范解决margin叠加问题：overflow=hidden or display = flex &lt;/p&gt;
+    &lt;p&gt;此时box1 下边距30px box2 上边距50px box1与box2 间距=30px+50px&lt;/p&gt;
+    &lt;section class="l"&gt;
+        &lt;p style="font-weight: bold; margin-left: 20px;"&gt;方法1:&lt;/p&gt;
+        &lt;div style="overflow: hidden;"&gt;
+            &lt;div class="box1" style="width: 100px;height: 100px;margin-bottom: 30px;background: blue;"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style="overflow: hidden;"&gt;
+            &lt;div class="box2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="l"&gt;
+        &lt;p style="font-weight: bold; margin-left: 20px;"&gt;方法2:&lt;/p&gt;
+        &lt;div style="display: flex;"&gt;
+            &lt;div class="box1" style="width: 100px;height: 100px;margin-bottom: 30px;background: blue;"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style="display: flex;"&gt;
+            &lt;div class="box2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/section&gt;
+&lt;section style="border: 1px solid black; margin-top: 20px;"&gt;
+    &lt;p style="font-weight: bold;"&gt;2.1 不符合BFC规范引发的margin传递问题&lt;/p&gt;
+    &lt;p&gt;此时div2的margin-top=50px,div2虽向下偏移50px，div1同时也向下偏移50px&lt;/p&gt;
+    &lt;div class="div1" style="width: 200px;height: 200px;background: blue;"&gt;
+        &lt;div class="div2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="clear" style="border: 1px solid black; margin-top: 20px;"&gt;
+    &lt;p style="font-weight: bold;"&gt;2.2 BFC规范解决margin传递问题：overflow=hidden, auto, scroll or position = absolute、fixed &lt;/p&gt;
+    &lt;p&gt;此时div2的margin-top=50px,div2向下偏移50px，div1在文档流中不受影响&lt;/p&gt;
+    &lt;section class="l"&gt;
+        &lt;p style="font-weight: bold; margin-left: 20px;"&gt;方法1:&lt;/p&gt;
+        &lt;div class="div1" style="width: 200px;height: 200px;background: blue; overflow: hidden;"&gt;
+            &lt;div class="div2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="l"&gt;
+        &lt;p style="font-weight: bold; margin-left: 20px;"&gt;方法2:&lt;/p&gt;
+        &lt;div class="div1" style="width: 200px;height: 200px;background: blue; position: absolute;"&gt;
+            &lt;div class="div2" style="width: 100px;height: 100px;margin-top: 50px;background: red;"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/section&gt;
+&lt;section style="margin-top: 20px;" class="clear"&gt;
+    &lt;p style="font-weight: bold;"&gt;3.1 不符合BFC规范引发的子元素浮动使得父容器高度出现问题&lt;/p&gt;
+    &lt;p&gt;原始父容器高度由子元素高度决定&lt;/p&gt;
+    &lt;div class="parent" style="width: 200px;height:auto; border:1px solid red;"&gt;
+        &lt;div class="child" style="width: 100px;height: 100px;background: blue;"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p&gt;此时child添加float= left,parent失去高度&lt;/p&gt;
+    &lt;div class="parent" style="width: 200px;height:auto; border:1px solid red;"&gt;
+        &lt;div class="child" style="width: 100px;height: 100px;background: blue; float: left;"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="clear" style="margin-top: 20px;"&gt;
+    &lt;p style="font-weight: bold;"&gt;3.2 BFC规范解决子元素浮动,父元素高度问题，overflow=hidden, auto, scroll or position = absolute、fixed or display = inline-block or float&lt;/p&gt;
+    &lt;p&gt;此时child的float-left,parent高度不受影响&lt;/p&gt; 
+    &lt;section class="l"&gt;
+        &lt;p style="font-weight: bold; margin-left: 20px;"&gt;方法1:&lt;/p&gt;
+        &lt;div class="parent" style="width: 200px;height:auto; border:1px solid red; display: inline-block;"&gt;
+            &lt;div class="child" style="width: 100px;height: 100px;background: blue; float: left;"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="l"&gt;
+        &lt;p style="font-weight: bold; margin-left: 20px;"&gt;方法2:&lt;/p&gt;
+        &lt;div class="parent" style="width: 200px;height:auto; border:1px solid red; overflow: hidden;"&gt;
+            &lt;div class="child" style="width: 100px;height: 100px;background: blue; float: left;"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/section&gt;
+&lt;section style="margin-top: 20px;" class="clear"&gt;
+    &lt;p style="font-weight: bold;"&gt;4.1 实现两列元素,元素之间不覆盖&lt;/p&gt;
+    &lt;p&gt;元素1左浮动，会覆盖元素2部分内容&lt;/p&gt;
+    &lt;div class="left_elem" style="width: 200px;height: 200px;background: red; float: left;"&gt;目录页
+        &lt;p style="margin-left: 20px;"&gt;第一页 &lt;br&gt; 第二页 &lt;br&gt; 第三页 &lt;br&gt; 第四页 &lt;br&gt; 第五页 &lt;br&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="right_elem" style="width: 500px;height: 300px;background: blue; color: white;"&gt;内容页
+        &lt;p style="margin-left: 20px; color: white;"&gt;左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="clear" style="margin-top: 20px;"&gt;
+    &lt;p style="font-weight: bold;"&gt;4.2 BFC规范实现两列元素,元素之间不覆盖，后一元素overflow=hidden, auto, scroll or position = absolute、fixed or display = inline-block or float&lt;/p&gt;
+    &lt;p&gt;此时right_elem摆脱left_elem的干扰,实现元素并排&lt;/p&gt; 
+    &lt;div class="left_elem" style="width: 200px;height: 200px;background: red; float: left;"&gt;目录页
+        &lt;p style="margin-left: 20px;"&gt;第一页 &lt;br&gt; 第二页 &lt;br&gt; 第三页 &lt;br&gt; 第四页 &lt;br&gt; 第五页 &lt;br&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="right_elem" style="width: 500px;height: 300px;background: blue; color: white; overflow: hidden;"&gt;内容页
+        &lt;p style="margin-left: 20px; color: white;"&gt;左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！左侧200px*200px的蓝色区域被覆盖住了,未实现两列元素的需求！
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
