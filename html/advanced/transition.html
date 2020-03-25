@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;height: 100px;background: blue;
+            transition-property: all;
+            transition-duration: 3s;
+            transition-delay: 1s;    
+        }
+        #div1:hover{width: 200px;height: 200px;background: red;}
+        ul,li{list-style: none;margin: 0;padding: 0;}
+        ul{width:500px;}
+        ul li{width: 60px;height: 70px; float: left;background: url('./html_imgs/transition_NavBg.png'); transition-duration: 0.8s; margin-right: 15px;}
+        ul li:hover{cursor: pointer;}
+        ul li:nth-child(1){background-position: 0 -70px ;}
+        ul li:nth-child(2){background-position: -60px -70px ;}
+        ul li:nth-child(3){background-position: -120px -70px ;}
+        ul li:nth-child(4){background-position: -180px -70px ;}
+        ul li:nth-child(5){background-position: -240px -70px ;}
+        ul li:nth-child(6){background-position: -300px -70px ;}
+
+        ul li:hover:nth-child(1){background-position: 0 0 ;}
+        ul li:hover:nth-child(2){background-position: -60px 0 ;}
+        ul li:hover:nth-child(3){background-position: -120px 0 ;}
+        ul li:hover:nth-child(4){background-position: -180px 0 ;}
+        ul li:hover:nth-child(5){background-position: -240px 0 ;}
+        ul li:hover:nth-child(6){background-position: -300px 0 ;}
+
+        .clear:after{content: "";display: block;clear: both;}
+    </style>    
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>transition实现动画:</h3>
+        <h3>1. 鼠标移入div一秒后，3秒内div渐渐变大，颜色渐渐变化</h3>
+        <h3>2. 实现导航栏变化</h3>
+        <h3>示例：</h3>
+        <img class= "example" src="./html_example/transition过渡及示例.gif" alt="">
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <section>
+                    <p>1. 鼠标移入div一秒后，3秒内div渐渐变大，颜色渐渐变化</p>
+                    <div id="div1"></div>
+                </section>
+                <section>
+                    <p>2. 实现导航栏变化</p>
+                    <ul class="clear">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <h3>知识点：</h3>
+        <p>transition-property  :  规定设置过渡效果的CSS属性的名称。<br>
+            transition-duration  :  规定完成过渡效果需要多少秒或毫秒。<br>
+            transition-delay  :  定义过渡效果何时开始。<br>
+            transition-timing-function  :  规定速度效果的速度曲线。<br>
+        </p>
+        <p>transition-timing-function: <br>
+            linear <br>
+            ease（默认值） <br>
+            ease-in <br>
+            ease-out <br>
+            ease-in-out <br>
+            cubic-bezie:(http://cubic-bezier.com) <br>
+        </p>
+        <p>transition 加到hover上，鼠标移出瞬间回复原始样式，符合样式 default：all 先duration 再 delay</p>
+        <p></p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;section&gt;
+    &lt;p&gt;1. 鼠标移入div一秒后，3秒内div渐渐变大，颜色渐渐变化&lt;/p&gt;
+    &lt;div id="div1"&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section&gt;
+    &lt;p&gt;2. 实现导航栏变化&lt;/p&gt;
+    &lt;ul class="clear"&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    #div1{
+        width: 100px;height: 100px;background: blue;
+        transition-property: all;
+        transition-duration: 3s;
+        transition-delay: 1s;    
+    }
+    #div1:hover{width: 200px;height: 200px;background: red;}
+    ul,li{list-style: none;margin: 0;padding: 0;}
+    ul{width:500px;}
+    ul li{width: 60px;height: 70px; float: left;background: url('./html_imgs/transition_NavBg.png'); transition-duration: 0.8s; margin-right: 15px;}
+    ul li:hover{cursor: pointer;}
+    ul li:nth-child(1){background-position: 0 -70px ;}
+    ul li:nth-child(2){background-position: -60px -70px ;}
+    ul li:nth-child(3){background-position: -120px -70px ;}
+    ul li:nth-child(4){background-position: -180px -70px ;}
+    ul li:nth-child(5){background-position: -240px -70px ;}
+    ul li:nth-child(6){background-position: -300px -70px ;}
+
+    ul li:hover:nth-child(1){background-position: 0 0 ;}
+    ul li:hover:nth-child(2){background-position: -60px 0 ;}
+    ul li:hover:nth-child(3){background-position: -120px 0 ;}
+    ul li:hover:nth-child(4){background-position: -180px 0 ;}
+    ul li:hover:nth-child(5){background-position: -240px 0 ;}
+    ul li:hover:nth-child(6){background-position: -300px 0 ;}
+
+    .clear:after{content: "";display: block;clear: both;}
+&lt;/style&gt;  
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
