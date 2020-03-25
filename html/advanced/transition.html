@@ -31,6 +31,10 @@
         ul li:hover:nth-child(5){background-position: -240px 0 ;}
         ul li:hover:nth-child(6){background-position: -300px 0 ;}
 
+        .div2 #bottom_line{height: 2px;margin-top: 5px; margin-bottom: 10px;background: black;width: 100px;transition-duration: 0.5s;margin-right: 200px;}
+        .div2 p:hover + #bottom_line{background: red;width: 200px;margin-right: 100px;}
+
+        .l{float: left;}
         .clear:after{content: "";display: block;clear: both;}
     </style>    
 </head>
@@ -40,6 +44,7 @@
         <h3>transition实现动画:</h3>
         <h3>1. 鼠标移入div一秒后，3秒内div渐渐变大，颜色渐渐变化</h3>
         <h3>2. 实现导航栏变化</h3>
+        <h3>3. 文字底部的长度变化</h3>
         <h3>示例：</h3>
         <img class= "example" src="./html_example/transition过渡及示例.gif" alt="">
         <div class="test_area">
@@ -59,6 +64,17 @@
                         <li></li>
                         <li></li>
                     </ul>
+                </section>
+                <section class="clear">
+                    <p>3. 文字底部的长度变化</p>
+                    <div class="div2 l">
+                        <p>这是一段文字</p>
+                        <div id="bottom_line"></div>
+                    </div>
+                    <div class="div2 l">
+                        <p>这是另一段文字</p>
+                        <div id="bottom_line"></div>
+                    </div>
                 </section>
             </div>
         </div>
@@ -96,6 +112,17 @@
         &lt;li&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/section&gt;
+&lt;section class="clear"&gt;
+    &lt;p&gt;3. 文字底部的长度变化&lt;/p&gt;
+    &lt;div class="div2 l"&gt;
+        &lt;p&gt;这是一段文字&lt;/p&gt;
+        &lt;div id="bottom_line"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="div2 l"&gt;
+        &lt;p&gt;这是另一段文字&lt;/p&gt;
+        &lt;div id="bottom_line"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
 </code>
 </pre>
         <h3>css源代码：</h3>
@@ -126,6 +153,9 @@
     ul li:hover:nth-child(4){background-position: -180px 0 ;}
     ul li:hover:nth-child(5){background-position: -240px 0 ;}
     ul li:hover:nth-child(6){background-position: -300px 0 ;}
+
+    .div2 #bottom_line{height: 2px;margin-top: 5px; margin-bottom: 10px;background: black;width: 100px;transition-duration: 0.5s;margin-right: 200px;}
+    .div2 p:hover + #bottom_line{background: red;width: 200px;margin-right: 100px;}
 
     .clear:after{content: "";display: block;clear: both;}
 &lt;/style&gt;  
