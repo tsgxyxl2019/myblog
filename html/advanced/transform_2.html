@@ -28,18 +28,19 @@
         .list li:hover .list_photo .list_photo_box .list_photo_text{transform: translate(0,0);}
         .list li:hover .list_photo .list_photo_box{transform: translate(0,0) rotate(0);}
 
-        .pic_list{width:828px;margin: 20px auto;}
-        .pic_list ul{width: 828px;border: 1px #cccccc solid;}
-        .pic_list ul li{float: left;margin: 13px 13px;position: relative;overflow: hidden;}
-        .pic_list ul li .img_text{width: 250px;height: 0px;position:absolute;top: 50px;background:rgba(0,0,0,.5);transform: translate(-45px,-45px) rotate(45deg);transition: 0.5s;overflow: hidden;z-index: 2;}
+        .pic_list{width:752px;margin: 20px auto;}
+        .pic_list ul{width: 752px;border: 1px #cccccc solid;}
+        .pic_list ul li{float: left;margin: 10px 11px;position: relative;overflow: hidden;}
+        .pic_list ul li img{width: 227px;height: 227px;}
+        .pic_list ul li .img_text{width: 227px;height: 0px;position:absolute;top: 50px;background:rgba(0,0,0,.5);transform: translate(-45px,-45px) rotate(45deg);transition: 0.5s;overflow: hidden;z-index: 2;}
         .pic_list ul li .img_text .text{width:100%;line-height: 22px;font-size: 22px;text-align: center;color: rgba(255, 255, 255,1);font-weight: bold;margin-top: 16px;padding-bottom: 18px;border-bottom: 3px solid #b1a5ab;;z-index: 2;}
         .pic_list ul li .img_text .para{width:100%;word-wrap:break-word;text-align: center;margin-top: 13px; line-height: 26px;font-size: 18px;color: rgba(255, 255, 255,1);z-index: 2;}
-        .pic_list ul li .upsquare{width: 350px;height: 350px;position: absolute;background: rgba(199,4,109,.4);z-index: 1;left: -140px;top: -420px;transform: rotate(45deg) translate(0,0);transition: .5s;transform-origin: center center;z-index:0;}
-        .pic_list ul li .downsquare{width: 350px;height: 350px;position: absolute;left: 48px;top: 320px;z-index: 1;background: rgba(199,4,109,.5);transform: rotate(45deg) translate(0);transition: .5s;transform-origin: center center;z-index:0;}
+        .pic_list ul li .upsquare{width: 318px;height: 318px;position: absolute;background: rgba(199,4,109,.4);z-index: 1;left: -120px;top: -381px;transform: rotate(45deg) translate(0,0);transition: .5s;transform-origin: center center;z-index:1;}
+        .pic_list ul li .downsquare{width: 318px;height: 318px;position: absolute;left: 65px;top: 290px;z-index: 1;background: rgba(199,4,109,.5);transform: rotate(45deg) translate(0);transition: .5s;transform-origin: center center;z-index:1;}
 
-        .pic_list ul li:hover .img_text{transform: translate(0,0) rotate(0);height:150px}
-        .pic_list ul li:hover .upsquare{transform: translate(0,200px) rotate(45deg);top: -340px}
-        .pic_list ul li:hover .downsquare{transform: translate(0,200px) rotate(45deg);top: -150px}
+        .pic_list ul li:hover .img_text{transform: translate(0,0) rotate(0);height:130px}
+        .pic_list ul li:hover .upsquare{transform: translate(0,200px) rotate(45deg);top: -309px}
+        .pic_list ul li:hover .downsquare{transform: translate(0,200px) rotate(45deg);top: -136px}
 
         .l{float: left;}
         .clear::after{content: "";display: block;clear: both;}
