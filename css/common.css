@@ -18,7 +18,7 @@ a{text-decoration: none;color: #646464;}
 .head .menu ul li a{color: white;}
 .head .menu ul li .selected {border-bottom: 2px solid #46bd87; }
 
-.nav{width: 320px;overflow-y: scroll; height: 880px;position: fixed;margin-top: 58px;background: white;}
+.nav{width: 320px;overflow-y: scroll; height: calc(100% - 58px);position: fixed;margin-top: 58px;background: white;}
 .nav .point{margin-top: 30px;margin-left: 25px;}
 .nav .point .point_list a{font-weight: bold;font-size: 16px;line-height: 16px;}
 .nav .point .point_list .point_child{margin-top: 22px;margin-left: 12px;}
