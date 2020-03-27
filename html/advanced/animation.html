@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        img{display: block;}
+        ul{list-style: none;}
+        .box1{width: 300px;height: 300px;margin: 20px auto;border: 1px solid black;}
+        .box2{width: 100px;height: 100px;background: red;animation-name: mybox2;
+            animation-duration: 4s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes mybox2 {
+            0% {transform: translate(0,0);}    
+            25% {transform: translate(200px,0);}
+            50% {transform: translate(200px,200px);}
+            75% {transform: translate(0px,200px);}
+            100% {transform: translate(0px,0px);}
+        }
+
+        .part2{ }
+        .part2 ul{width: 200px;margin: 20px auto;}
+        .part2 ul li{margin:0px 20px;cursor: pointer;}
+        .part2 ul li:hover img{ animation-name: part2_icon;animation-duration: 0.5s;}
+
+        @keyframes part2_icon {
+            0% {transform: translate(0,0);opacity: 1;}
+            25% {transform: translate(0,-50px);opacity: 0;}
+            50% {transform: translate(0,50px);opacity: 0;}
+            100% {transform: translate(0,0);opacity: 1;}
+
+        }
+        
+        .loading{width: 40px;height: 40px;margin: 20px auto;position: relative;}
+        .loading .loading_box1, .loading .loading_box2{width: 100%;height: 100%;position: absolute;}
+        .loading .loading_box2{transform: rotate(45deg);}
+        .loading .loading_box1 div,.loading .loading_box2 div{width: 10px;height: 10px;background: blue;border-radius: 50%;position: absolute;animation: loadingmove 1.5s infinite ;}
+        .loading .loading_box1 div:nth-child(1),.loading .loading_box2 div:nth-child(1){left: 0;top:0;}
+        .loading .loading_box1 div:nth-child(2),.loading .loading_box2 div:nth-child(2){right: 0;top:0;}
+        .loading .loading_box1 div:nth-child(3),.loading .loading_box2 div:nth-child(3){right: 0;bottom:0;}
+        .loading .loading_box1 div:nth-child(4),.loading .loading_box2 div:nth-child(4){left: 0;bottom:0;}
+
+        @keyframes loadingmove {
+            0%{transform: scale(1);}
+            50%{transform: scale(0);}
+            100%{transform: scale(1);}
+            
+        }
+
+        .loading .loading_box1 div:nth-child(1){animation-delay: -1.4s;}
+        .loading .loading_box2 div:nth-child(1){animation-delay: -1.2s;}
+        .loading .loading_box1 div:nth-child(2){animation-delay: -1s;}
+        .loading .loading_box2 div:nth-child(2){animation-delay: -0.8s;}
+        .loading .loading_box1 div:nth-child(3){animation-delay: -0.6s;}
+        .loading .loading_box2 div:nth-child(3){animation-delay: -0.4s;}
+        .loading .loading_box1 div:nth-child(4){animation-delay: -0.2s;}
+        .loading .loading_box2 div:nth-child(4){animation-delay: -0s;}
+
+        .loading_2{width: 190px;margin: 100px auto; display: flex;justify-content: space-between;}
+        .loading_2 div{width: 30px; height: 30px; background: rgba(0,255,0,0.5); border-radius: 50%; animation: 1s loading_2_move infinite;float: left;}
+        @keyframes loading_2_move {
+            0%{transform: scale(1);}
+            50%{transform: scale(2);}
+            100%{transform: scale(1);}
+        }
+        .loading_2 div:nth-child(1){animation-delay: -1s;}
+        .loading_2 div:nth-child(2){animation-delay: -0.9s;}
+        .loading_2 div:nth-child(3){animation-delay: -0.8s;}
+        .loading_2 div:nth-child(4){animation-delay: -0.7s;}
+        .loading_2 div:nth-child(5){animation-delay: -0.6s;}
+
+        .l {float: left;}
+        .clear:after{content: "";display: block;clear: both;}
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>1.一个1s后永远进行正方形方式运动的正方形</h3>
+        <h3>2.动画淡入淡出图标</h3>
+        <h3>3.css实现loading效果(1)</h3>
+        <h3>4.css实现loading效果(2)</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <section>
+                    <h3>1.一个1s后永远进行正方形方式运动的正方形</h3>
+                    <div class="box1">
+                        <div class="box2"></div>
+                    </div>
+                </section>
+                <section class="part2">
+                    <h3>2.动画淡入淡出图标</h3>
+                    <ul class="clear">
+                        <li class="l"><img src="./html_imgs/animation_2_1.png" alt=""></li>
+                        <li class="l"><img src="./html_imgs/animation_2_2.png" alt=""></li>
+                        <li class="l"><img src="./html_imgs/animation_2_3.png" alt=""></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>3.css实现loading效果(1)</h3>
+                    <div class="loading">
+                        <div class="loading_box1">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="loading_box2">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    
+                </section>
+                <section>
+                    <h3>4.css实现loading效果(2)</h3>
+                    <div class="loading_2">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <h3>知识点：</h3>
+        <p>animation-fill-mode : 规定动画播放之前或之后，其动画效果是否可见。 <br>
+            none (默认值) : 在运动结束之后回到初始位置，在延迟的情况下，让0%在延迟后生效 <br>
+            backwards  :  在延迟的情况下，让0%在延迟前生效 <br>
+            forwards  :  在运动结束的之后，停到结束位置 <br>
+            both  :  backwards和forwards同时生效 <br>
+        </p>
+        <p>animation-direction  :  属性定义是否应该轮流反向播放动画。<br>
+            alternate  :  一次正向(0%~100%)，一次反向(100%~0%) <br>
+            reverse : 永远都是反向 , 从100%~0% <br>
+            normal (默认值) : 永远都是正向 , 从0%~100% <br>
+        </p>
+        <p>注：</p>
+        <p style="text-indent: 2em;">1.运动结束后默认回起始位置 </p>
+        <p style="text-indent: 2em;">2.from = 0% , to = 100% </p>
+        <p style="text-indent: 2em;">loading: 利用div四角确定4个点 再利用绝对定位添加另一个相同div，并将相同的div旋转45度</p>
+        <p style="text-indent: 2em;">delay 改成负值使得加载即具有动画效果</p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;section&gt;
+    &lt;h3&gt;1.一个1s后永远进行正方形方式运动的正方形&lt;/h3&gt;
+    &lt;div class="box1"&gt;
+        &lt;div class="box2"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="part2"&gt;
+    &lt;h3&gt;2.动画淡入淡出图标&lt;/h3&gt;
+    &lt;ul class="clear"&gt;
+        &lt;li class="l"&gt;&lt;img src="./html_imgs/animation_2_1.png" alt=""&gt;&lt;/li&gt;
+        &lt;li class="l"&gt;&lt;img src="./html_imgs/animation_2_2.png" alt=""&gt;&lt;/li&gt;
+        &lt;li class="l"&gt;&lt;img src="./html_imgs/animation_2_3.png" alt=""&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+&lt;section&gt;
+    &lt;h3&gt;3.css实现loading效果(1)&lt;/h3&gt;
+    &lt;div class="loading"&gt;
+        &lt;div class="loading_box1"&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="loading_box2"&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+&lt;/section&gt;
+&lt;section&gt;
+    &lt;h3&gt;4.css实现loading效果(2)&lt;/h3&gt;
+    &lt;div class="loading_2"&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    *{padding: 0;margin: 0;}
+    img{display: block;}
+    ul{list-style: none;}
+    .box1{width: 300px;height: 300px;margin: 20px auto;border: 1px solid black;}
+    .box2{width: 100px;height: 100px;background: red;animation-name: mybox2;
+        animation-duration: 4s;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes mybox2 {
+        0% {transform: translate(0,0);}    
+        25% {transform: translate(200px,0);}
+        50% {transform: translate(200px,200px);}
+        75% {transform: translate(0px,200px);}
+        100% {transform: translate(0px,0px);}
+    }
+
+    .part2{ }
+    .part2 ul{width: 200px;margin: 20px auto;}
+    .part2 ul li{margin:0px 20px;cursor: pointer;}
+    .part2 ul li:hover img{ animation-name: part2_icon;animation-duration: 0.5s;}
+
+    @keyframes part2_icon {
+        0% {transform: translate(0,0);opacity: 1;}
+        25% {transform: translate(0,-50px);opacity: 0;}
+        50% {transform: translate(0,50px);opacity: 0;}
+        100% {transform: translate(0,0);opacity: 1;}
+
+    }
+    
+    .loading{width: 40px;height: 40px;margin: 20px auto;position: relative;}
+    .loading .loading_box1, .loading .loading_box2{width: 100%;height: 100%;position: absolute;}
+    .loading .loading_box2{transform: rotate(45deg);}
+    .loading .loading_box1 div,.loading .loading_box2 div{width: 10px;height: 10px;background: blue;border-radius: 50%;position: absolute;animation: loadingmove 1.5s infinite ;}
+    .loading .loading_box1 div:nth-child(1),.loading .loading_box2 div:nth-child(1){left: 0;top:0;}
+    .loading .loading_box1 div:nth-child(2),.loading .loading_box2 div:nth-child(2){right: 0;top:0;}
+    .loading .loading_box1 div:nth-child(3),.loading .loading_box2 div:nth-child(3){right: 0;bottom:0;}
+    .loading .loading_box1 div:nth-child(4),.loading .loading_box2 div:nth-child(4){left: 0;bottom:0;}
+
+    @keyframes loadingmove {
+        0%{transform: scale(1);}
+        50%{transform: scale(0);}
+        100%{transform: scale(1);}
+        
+    }
+
+    .loading .loading_box1 div:nth-child(1){animation-delay: -1.4s;}
+    .loading .loading_box2 div:nth-child(1){animation-delay: -1.2s;}
+    .loading .loading_box1 div:nth-child(2){animation-delay: -1s;}
+    .loading .loading_box2 div:nth-child(2){animation-delay: -0.8s;}
+    .loading .loading_box1 div:nth-child(3){animation-delay: -0.6s;}
+    .loading .loading_box2 div:nth-child(3){animation-delay: -0.4s;}
+    .loading .loading_box1 div:nth-child(4){animation-delay: -0.2s;}
+    .loading .loading_box2 div:nth-child(4){animation-delay: -0s;}
+
+    .loading_2{width: 190px;margin: 100px auto; display: flex;justify-content: space-between;}
+    .loading_2 div{width: 30px; height: 30px; background: rgba(0,255,0,0.5); border-radius: 50%; animation: 1s loading_2_move infinite;float: left;}
+    @keyframes loading_2_move {
+        0%{transform: scale(1);}
+        50%{transform: scale(2);}
+        100%{transform: scale(1);}
+    }
+    .loading_2 div:nth-child(1){animation-delay: -1s;}
+    .loading_2 div:nth-child(2){animation-delay: -0.9s;}
+    .loading_2 div:nth-child(3){animation-delay: -0.8s;}
+    .loading_2 div:nth-child(4){animation-delay: -0.7s;}
+    .loading_2 div:nth-child(5){animation-delay: -0.6s;}
+
+    .l {float: left;}
+    .clear:after{content: "";display: block;clear: both;}
+
+&lt;/style&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
