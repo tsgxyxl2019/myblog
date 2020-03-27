@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <link rel="stylesheet" href="./html_css/animate.css">
+    <title>Document</title>
+    <style>
+        .part_1 div, .part_2 div{width: 100px;height: 100px;background: red; animation: part_1_move 3s linear;margin-bottom: 20px;color: white;}
+        .part_2 div{animation-iteration-count: infinite;}
+        .part_1 .box1{animation-delay: 2s;animation-fill-mode: none;}
+        .part_1 .box2{animation-delay: 2s;animation-fill-mode: backwards;}
+        .part_1 .box3{animation-delay: 2s;animation-fill-mode: forwards;}
+        .part_1 .box4{animation-delay: 2s;animation-fill-mode: both;}
+        @keyframes part_1_move {
+            0%{transform: translate(0px,0px);background: blue;}
+            100%{transform: translate(300px,0px);}
+        }
+         
+        .part_2 .box1{animation-direction: normal}
+        .part_2 .box2{animation-direction: reverse}
+        .part_2 .box3{animation-direction: alternate}
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>1.animation-fill-mode 实现不同的动画</h3>
+        <h3>2.animation-direction 实现不同的动画方向</h3>
+        <h3>3.利用animate动画库 实现不同的动画</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <section class="part_1">
+                    <h3>1.animation-fill-mode 实现不同的动画</h3>
+                    <div class="box1">1.animation-fill-mode: none</div>
+                    <div class="box2">2.animation-fill-mode: backwards</div>
+                    <div class="box3">3.animation-fill-mode: forwards</div>
+                    <div class="box4">4.animation-fill-mode: both</div>
+                </section>
+                <section class="part_2">
+                    <h3>2.animation-direction 实现不同的动画方向</h3>
+                    <div class="box1">1.animation-direction: normal</div>
+                    <div class="box2">2.animation-direction: reverse</div>
+                    <div class="box3">3.animation-direction: alternate</div>
+                </section>
+                <section class="part_3">
+                    <h3>3.利用animate动画库 实现不同的动画</h3>
+                    <div><img src="./html_imgs/list_photo.png" alt="" class="animated tada infinite slow">
+                </section>
+            </div>
+        </div>
+        <h3>知识点：</h3>
+        <p>animation-fill-mode : 规定动画播放之前或之后，其动画效果是否可见。 <br>
+            none (默认值) : 在运动结束之后回到初始位置，在延迟的情况下，让0%在延迟后生效 <br>
+            backwards  :  在延迟的情况下，让0%在延迟前生效 <br>
+            forwards  :  在运动结束的之后，停到结束位置 <br>
+            both  :  backwards和forwards同时生效 <br>
+        </p>
+        <p>animation-direction  :  属性定义是否应该轮流反向播放动画。<br>
+            normal (默认值) : 永远都是正向 , 从0%~100% <br>
+            reverse : 永远都是反向 , 从100%~0% <br>
+            alternate  :  一次正向(0%~100%)，一次反向(100%~0%) <br>
+        </p>
+        <p>一款强大的预设css3动画库。<br>
+            官网地址：https://daneden.github.io/animate.css/ <br>
+            基本使用：<br>
+            animated : 基类(基础的样式，每个动画效果都需要加) <br>
+            infinite : 动画的无限次数 <br>
+        </p>
+        <p></p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;section class="part_1"&gt;
+    &lt;h3&gt;1.animation-fill-mode 实现不同的动画&lt;/h3&gt;
+    &lt;div class="box1"&gt;1.animation-fill-mode: none&lt;/div&gt;
+    &lt;div class="box2"&gt;2.animation-fill-mode: backwards&lt;/div&gt;
+    &lt;div class="box3"&gt;3.animation-fill-mode: forwards&lt;/div&gt;
+    &lt;div class="box4"&gt;4.animation-fill-mode: both&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="part_2"&gt;
+    &lt;h3&gt;2.animation-direction 实现不同的动画方向&lt;/h3&gt;
+    &lt;div class="box1"&gt;1.animation-direction: normal&lt;/div&gt;
+    &lt;div class="box2"&gt;2.animation-direction: reverse&lt;/div&gt;
+    &lt;div class="box3"&gt;3.animation-direction: alternate&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="part_3"&gt;
+    &lt;h3&gt;3.利用animate动画库 实现不同的动画&lt;/h3&gt;
+    &lt;div&gt;&lt;img src="./html_imgs/list_photo.png" alt="" class="animated tada infinite slow"&gt;
+&lt;/section&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    .part_1 div, .part_2 div{width: 100px;height: 100px;background: red; animation: part_1_move 3s linear;margin-bottom: 20px;color: white;}
+    .part_2 div{animation-iteration-count: infinite;}
+    .part_1 .box1{animation-delay: 2s;animation-fill-mode: none;}
+    .part_1 .box2{animation-delay: 2s;animation-fill-mode: backwards;}
+    .part_1 .box3{animation-delay: 2s;animation-fill-mode: forwards;}
+    .part_1 .box4{animation-delay: 2s;animation-fill-mode: both;}
+    @keyframes part_1_move {
+        0%{transform: translate(0px,0px);background: blue;}
+        100%{transform: translate(300px,0px);}
+    }
+        
+    .part_2 .box1{animation-direction: normal}
+    .part_2 .box2{animation-direction: reverse}
+    .part_2 .box3{animation-direction: alternate}
+&lt;/style&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
