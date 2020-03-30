@@ -39,6 +39,36 @@
 
         .displaybox_2:hover ul li:nth-child(1){transform: rotateY(180deg);}
         .displaybox_2:hover ul li:nth-child(2){transform: rotateY(0);}
+
+        .displaybox_3{width: 700px;height: 350px;margin: 30px auto;border: solid 1px black;position: relative;perspective: 2000px;transform-style: preserve-3d;}
+        .displaybox_3 div{width: 150px;height:200px;border: solid 1px blue;position: absolute;left:350px;top: 75px;text-align: center;line-height: 100px;background: white;color: blue;transform-origin: left;transform:rotateX(45deg);}
+        .displaybox_3 .out{transform-origin: left;transform:rotateX(45deg) rotateY(-180deg);border: solid 1px black;z-index: -1;background: transparent;}
+        .displaybox_3 .first_first{background: blue;color: white; animation: roll_0 3s linear forwards;z-index: 4;}
+        .displaybox_3 .first{animation: roll_1 3s 3s linear forwards;z-index: 3;}
+        .displaybox_3 .second{animation: roll_2 3s 6s linear forwards;z-index: 2;}
+        .displaybox_3 .third{animation: roll_3 3s 9s linear forwards;z-index: 1;}
+        .displaybox_3 .back{transform:rotateX(45deg);border: solid 1px black;z-index: -1;}
+        @keyframes roll_0 {
+            0%{transform: rotateX(45deg) rotateY(0);}
+            50%{transform: rotateX(45deg) rotateY(-90deg);}
+            100%{transform: rotateX(45deg) rotateY(-180deg);z-index: 1;}
+        }
+        @keyframes roll_1 {
+            0%{transform: rotateX(45deg) rotateY(0);}
+            50%{transform: rotateX(45deg) rotateY(-90deg);}
+            100%{transform: rotateX(45deg) rotateY(-180deg);z-index: 2;}
+        }
+        @keyframes roll_2 {
+            0%{transform: rotateX(45deg) rotateY(0);}
+            50%{transform: rotateX(45deg) rotateY(-90deg);}
+            100%{transform: rotateX(45deg) rotateY(-180deg);z-index: 3;}
+        }
+        @keyframes roll_3 {
+            0%{transform: rotateX(45deg) rotateY(0);}
+            50%{transform: rotateX(45deg) rotateY(-90deg);}
+            100%{transform: rotateX(45deg) rotateY(-180deg);z-index: 4;}
+        }
+
     </style>
 </head>
 <body>
@@ -69,6 +99,17 @@
                             <li><img src="./html_imgs/turn_over_1.jpg" alt=""></li>
                             <li><img src="./html_imgs/turn_over_2.jpg" alt=""></li>
                         </ul>
+                    </div>
+                </section>
+                <section>
+                    <h3>3.实现翻书页效果</h3>
+                    <div class="displaybox_3">
+                        <div class="out"></div>
+                        <div class="first_first">封面</div>
+                        <div class="first">第一页</div>
+                        <div class="second">第二页</div>
+                        <div class="third">第三页</div>
+                        <div class="back"></div>
                     </div>
                 </section>
             </div>
@@ -103,12 +144,23 @@
         &lt;/ul&gt;
     &lt;/div&gt;
 &lt;/section&gt;
+&lt;section&gt;
+    &lt;h3&gt;3.实现翻书页效果&lt;/h3&gt;
+    &lt;div class="displaybox_3"&gt;
+        &lt;div class="out"&gt;&lt;/div&gt;
+        &lt;div class="first_first"&gt;封面&lt;/div&gt;
+        &lt;div class="first"&gt;第一页&lt;/div&gt;
+        &lt;div class="second"&gt;第二页&lt;/div&gt;
+        &lt;div class="third"&gt;第三页&lt;/div&gt;
+        &lt;div class="back"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
 </code>
 </pre>
         <h3>css源代码：</h3>
 <pre>
 <code>
-&lt;style>
+&lt;style&gt;
     *{margin: 0;padding: 0;}
     ul{list-style: none;}
     img{display: block;}
@@ -142,7 +194,36 @@
 
     .displaybox_2:hover ul li:nth-child(1){transform: rotateY(180deg);}
     .displaybox_2:hover ul li:nth-child(2){transform: rotateY(0);}
-&lt;/style>
+
+    .displaybox_3{width: 700px;height: 350px;margin: 30px auto;border: solid 1px black;position: relative;perspective: 2000px;transform-style: preserve-3d;}
+        .displaybox_3 div{width: 150px;height:200px;border: solid 1px blue;position: absolute;left:350px;top: 75px;text-align: center;line-height: 100px;background: white;color: blue;transform-origin: left;transform:rotateX(45deg);}
+        .displaybox_3 .out{transform-origin: left;transform:rotateX(45deg) rotateY(-180deg);border: solid 1px black;z-index: -1;background: transparent;}
+        .displaybox_3 .first_first{background: blue;color: white; animation: roll_0 3s linear forwards;z-index: 4;}
+        .displaybox_3 .first{animation: roll_1 3s 3s linear forwards;z-index: 3;}
+        .displaybox_3 .second{animation: roll_2 3s 6s linear forwards;z-index: 2;}
+        .displaybox_3 .third{animation: roll_3 3s 9s linear forwards;z-index: 1;}
+        .displaybox_3 .back{transform:rotateX(45deg);border: solid 1px black;z-index: -1;}
+        @keyframes roll_0 {
+            0%{transform: rotateX(45deg) rotateY(0);}
+            50%{transform: rotateX(45deg) rotateY(-90deg);}
+            100%{transform: rotateX(45deg) rotateY(-180deg);z-index: 1;}
+        }
+        @keyframes roll_1 {
+            0%{transform: rotateX(45deg) rotateY(0);}
+            50%{transform: rotateX(45deg) rotateY(-90deg);}
+            100%{transform: rotateX(45deg) rotateY(-180deg);z-index: 2;}
+        }
+        @keyframes roll_2 {
+            0%{transform: rotateX(45deg) rotateY(0);}
+            50%{transform: rotateX(45deg) rotateY(-90deg);}
+            100%{transform: rotateX(45deg) rotateY(-180deg);z-index: 3;}
+        }
+        @keyframes roll_3 {
+            0%{transform: rotateX(45deg) rotateY(0);}
+            50%{transform: rotateX(45deg) rotateY(-90deg);}
+            100%{transform: rotateX(45deg) rotateY(-180deg);z-index: 4;}
+        }
+&lt;/style&gt;
 </code>
 </pre>
         
