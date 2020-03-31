@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <style>
+        img{display: block;}
+        .part1 .first,.part1 .second,.part1 .third,.part1 .fourth{width: 270px;height: 270px;border: solid 1px black;float: left;margin: 20px 50px;}
+        .part1 .first p,.part1 .second p,.part1 .third p,.part1 .fourth p{width: 100%;word-wrap:break-word;line-height: 20px;margin: 0;text-align: center;}
+        .part1 .first div,.part1 .second div,.part1 .third div,.part1 .fourth div{width: 270px;height: 250px;}
+        .part1 .first div{background-image: linear-gradient(blue,red,yellow,green);}
+        .part1 .second div{background-image: linear-gradient(to right bottom,blue,red);}
+        .part1 .third div{background-image: linear-gradient(135deg,blue,red);}
+        .part1 .fourth div{background-image: linear-gradient(blue 20%,red 40%);}
+        
+        .part2 .progress{width: 300px;height: 30px;border: 1px solid black;margin: 20px auto;background-image: linear-gradient(to right,green 20%,white 20%);
+                        animation: progress_run 4s infinite alternate; border-radius: 15px;}
+        @keyframes progress_run {
+            0%{background-image:linear-gradient(to right,green 20%,white 20%);}
+            12%{background-image:linear-gradient(to right,green 30%,white 30%);}
+            25%{background-image:linear-gradient(to right,green 40%,white 40%);}
+            37%{background-image:linear-gradient(to right,green 50%,white 50%);}
+            50%{background-image:linear-gradient(to right,green 60%,white 60%);}
+            62%{background-image:linear-gradient(to right,green 70%,white 70%);}
+            75%{background-image:linear-gradient(to right,green 80%,white 80%);}
+            87%{background-image:linear-gradient(to right,green 90%,white 90%);}
+            100%{background-image:linear-gradient(to right,green 100%,white 100%);}
+        }
+
+        .part3 .progress_2{width: 300px;height: 30px;border: 1px solid black;margin: 20px auto;background-image: linear-gradient(to bottom right,green 25%,transparent 25%,transparent 50%,green 50%,green 75%, transparent 75%, transparent 100%); background-size: 30px;background-repeat: repeat;animation: progress_2_run 4s infinite linear; border-radius: 15px;}
+
+        @keyframes progress_2_run {
+            0%{background-position: 0px 0px;}
+            100%{background-position: 300px 0px;}
+        }
+
+        .part4 .outer{width: 640px;height: 320px;margin: 20px auto;position: relative;cursor: pointer;}
+        .part4 .outer div{width: 10%;height:  120%;background-image: linear-gradient(to right,transparent 30%,white 45%,white 55%,transparent 70%, transparent 100%);transform:  translate(0,0) rotate(30deg);position: absolute;left: -150px;top: -30px;transition: 1s;}
+        .part4 img{width: 640px;height: 320px;}
+        .part4 .outer:hover div{transform: translate(860px,0) rotate(30deg);}
+
+        .l{float: left;}
+        .clear:after{content: "";display: block;clear: both;}
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>1. css3实现不同的渐变色</h3>
+        <h3>2. 渐变色实现进度条</h3>
+        <h3>3. 渐变色实现斜切进度条</h3>
+        <h3>4. <h3>4. 渐变色实现光转</h3></h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <section class="part1 clear">
+                    <h3>1. css3实现不同的渐变色</h3>
+                    <div class="first">
+                        <p>linear-gradient(blue,red,yellow,green)</p>
+                        <div></div>
+                    </div>
+                    <div class="second">
+                        <p>linear-gradient(to right bottom,blue,red)</p>
+                        <div></div>
+                    </div>
+                    <div class="third">
+                        <p>linear-gradient(135deg,blue,red)</p>
+                        <div></div>
+                    </div>
+                    <div class="fourth">
+                        <p>linear-gradient(blue 20%,red 40%)</p>
+                        <div></div>
+                    </div>
+                </section>
+                <section class="part2">
+                    <h3>2. 渐变色实现进度条</h3>
+                    <div class="progress"></div>
+                </section>
+                <section class="part3">
+                    <h3>3. 渐变色实现斜切进度条</h3>
+                    <div class="progress_2"></div>
+                </section>
+                <section class="part4">
+                    <h3>4. 渐变色实现光转</h3>
+                    <div class="outer">
+                        <img src="./html_imgs/turn_over_1.jpg" alt="">
+                        <div></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <h3>知识点：</h3>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;section class="part1 clear"&gt;
+    &lt;h3&gt;1. css3实现不同的渐变色&lt;/h3&gt;
+    &lt;div class="first"&gt;
+        &lt;p&gt;linear-gradient(blue,red,yellow,green)&lt;/p&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="second"&gt;
+        &lt;p&gt;linear-gradient(to right bottom,blue,red)&lt;/p&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="third"&gt;
+        &lt;p&gt;linear-gradient(135deg,blue,red)&lt;/p&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="fourth"&gt;
+        &lt;p&gt;linear-gradient(blue 20%,red 40%)&lt;/p&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="part2"&gt;
+    &lt;h3&gt;2. 渐变色实现进度条&lt;/h3&gt;
+    &lt;div class="progress"&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="part3"&gt;
+    &lt;h3&gt;3. 渐变色实现斜切进度条&lt;/h3&gt;
+    &lt;div class="progress_2"&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="part4"&gt;
+    &lt;h3&gt;4. 渐变色实现光转&lt;/h3&gt;
+    &lt;div class="outer"&gt;
+        &lt;img src="./html_imgs/turn_over_1.jpg" alt=""&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    .part1 .first,.part1 .second,.part1 .third,.part1 .fourth{width: 270px;height: 270px;border: solid 1px black;float: left;margin: 20px 50px;}
+    .part1 .first p,.part1 .second p,.part1 .third p,.part1 .fourth p{width: 100%;word-wrap:break-word;line-height: 20px;margin: 0;text-align: center;}
+    .part1 .first div,.part1 .second div,.part1 .third div,.part1 .fourth div{width: 270px;height: 250px;}
+    .part1 .first div{background-image: linear-gradient(blue,red,yellow,green);}
+    .part1 .second div{background-image: linear-gradient(to right bottom,blue,red);}
+    .part1 .third div{background-image: linear-gradient(135deg,blue,red);}
+    .part1 .fourth div{background-image: linear-gradient(blue 20%,red 40%);}
+    
+    .part2 .progress{width: 300px;height: 30px;border: 1px solid black;margin: 20px auto;background-image: linear-gradient(to right,green 20%,white 20%);
+                    animation: progress_run 4s infinite alternate; border-radius: 15px;}
+    @keyframes progress_run {
+        0%{background-image:linear-gradient(to right,green 20%,white 20%);}
+        12%{background-image:linear-gradient(to right,green 30%,white 30%);}
+        25%{background-image:linear-gradient(to right,green 40%,white 40%);}
+        37%{background-image:linear-gradient(to right,green 50%,white 50%);}
+        50%{background-image:linear-gradient(to right,green 60%,white 60%);}
+        62%{background-image:linear-gradient(to right,green 70%,white 70%);}
+        75%{background-image:linear-gradient(to right,green 80%,white 80%);}
+        87%{background-image:linear-gradient(to right,green 90%,white 90%);}
+        100%{background-image:linear-gradient(to right,green 100%,white 100%);}
+    }
+
+    .part3 .progress_2{width: 300px;height: 30px;border: 1px solid black;margin: 20px auto;background-image: linear-gradient(to bottom right,green 25%,transparent 25%,transparent 50%,green 50%,green 75%, transparent 75%, transparent 100%); background-size: 30px;background-repeat: repeat;animation: progress_2_run 4s infinite linear; border-radius: 15px;}
+
+    @keyframes progress_2_run {
+        0%{background-position: 0px 0px;}
+        100%{background-position: 300px 0px;}
+    }
+
+    .part4 .outer{width: 640px;height: 320px;margin: 20px auto;position: relative;cursor: pointer;}
+    .part4 .outer div{width: 10%;height:  120%;background-image: linear-gradient(to right,transparent 30%,white 45%,white 55%,transparent 70%, transparent 100%);transform:  translate(0,0) rotate(30deg);position: absolute;left: -150px;top: -30px;transition: 1s;}
+    .part4 img{width: 640px;height: 320px;}
+    .part4 .outer:hover div{transform: translate(860px,0) rotate(30deg);}
+
+    .l{float: left;}
+    .clear:after{content: "";display: block;clear: both;}
+&lt;/style&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
