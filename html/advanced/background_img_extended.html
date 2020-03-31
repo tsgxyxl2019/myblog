@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <style>
+        .size{}
+        .size div{width: 300px;height: 200px;  background: url('./html_imgs/merry-go-round_3.jpg') no-repeat;border: 1px solid black;}
+        .size .cover{background-size: cover;}
+        .size .contain{background-size: contain;}
+
+        .position div{width: 300px;height: 200px;  background: url('./html_imgs/merry-go-round_3.jpg') ;border: 10px solid rgba(255, 0, 0, 0.5);padding: 10px;}
+        .position .origin{background-origin: padding-box;}
+        .position .border{background-origin: border-box;}
+        .position .content_1{background-origin: content-box;}
+
+        .clip div{width: 300px;height: 200px;  background: url('./html_imgs/merry-go-round_3.jpg') ;border: 10px solid rgba(255, 0, 0, 0.5);padding: 10px;}
+        .clip .origin{background-clip:border-box ;}
+        .clip .padding{background-clip: padding-box;;}
+        .clip .content_1{background-clip: content-box;}
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>1. 背景图不同的填充方式</h3>
+        <h3>2. 背景图不同的填充位置</h3>
+        <h3>3. 背景图不同的裁切方式</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <section class="size">
+                    <h3>1. 背景图不同的填充方式</h3>
+                    <p>1.原始图：</p>
+                    <div class="origin"></div>
+                    <p>2.background-size:cover</p>
+                    <div class="cover"></div>
+                    <p>3.background-size:contain</p>
+                    <div class="contain"></div>
+                </section>
+                <section class="position">
+                    <h3>2. 背景图不同的填充位置(border:10px padding：10px)</h3>
+                    <p>1.原始图 (padding-box)：</p>
+                    <div class="origin"></div>
+                    <p>2.background-origin: border-box</p>
+                    <div class="border"></div>
+                    <p>3.background-origin: content-box</p>
+                    <div class="content_1"></div>
+                </section>
+                <section class="clip">
+                    <h3>3. 背景图不同的裁切方式(border:10px padding：10px)</h3>
+                    <p>1.原始图 (border-box)：</p>
+                    <div class="origin"></div>
+                    <p>2.background-clip: padding-box</p>
+                    <div class="padding"></div>
+                    <p>3.background-clip: content-box</p>
+                    <div class="content_1"></div>
+                </section>
+            </div>
+        </div>
+        <h3>知识点：</h3>
+        <p>background-size : 背景图的尺寸大小</p>
+        <p style="margin-left: 2em;">
+            cover : 覆盖 <br>
+            contain : 包含  <br>
+        </p>
+        <p>background-origin : 背景图的填充位置</p>
+        <p style="margin-left: 2em;">
+            padding-box (默认) <br>
+            border-box <br>
+            content-box <br>
+        </p> 
+        <p>background-clip : 背景图的裁切方式</p>
+        <p style="margin-left : 2em;">        
+            padding-box  <br>
+            border-box (默认) <br> 
+            content-box <br>
+        </p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;section class="size"&gt;
+    &lt;h3&gt;1. 背景图不同的填充方式&lt;/h3&gt;
+    &lt;p&gt;1.原始图：&lt;/p&gt;
+    &lt;div class="origin"&gt;&lt;/div&gt;
+    &lt;p&gt;2.background-size:cover&lt;/p&gt;
+    &lt;div class="cover"&gt;&lt;/div&gt;
+    &lt;p&gt;3.background-size:contain&lt;/p&gt;
+    &lt;div class="contain"&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="position"&gt;
+    &lt;h3&gt;2. 背景图不同的填充位置(border:10px padding：10px)&lt;/h3&gt;
+    &lt;p&gt;1.原始图 (padding-box)：&lt;/p&gt;
+    &lt;div class="origin"&gt;&lt;/div&gt;
+    &lt;p&gt;2.background-origin: border-box&lt;/p&gt;
+    &lt;div class="border"&gt;&lt;/div&gt;
+    &lt;p&gt;3.background-origin: content-box&lt;/p&gt;
+    &lt;div class="content_1"&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="clip"&gt;
+    &lt;h3&gt;3. 背景图不同的裁切方式(border:10px padding：10px)&lt;/h3&gt;
+    &lt;p&gt;1.原始图 (border-box)：&lt;/p&gt;
+    &lt;div class="origin"&gt;&lt;/div&gt;
+    &lt;p&gt;2.background-clip: padding-box&lt;/p&gt;
+    &lt;div class="padding"&gt;&lt;/div&gt;
+    &lt;p&gt;3.background-clip: content-box&lt;/p&gt;
+    &lt;div class="content_1"&gt;&lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    .size{}
+    .size div{width: 300px;height: 200px;  background: url('./html_imgs/merry-go-round_3.jpg') no-repeat;border: 1px solid black;}
+    .size .cover{background-size: cover;}
+    .size .contain{background-size: contain;}
+
+    .position div{width: 300px;height: 200px;  background: url('./html_imgs/merry-go-round_3.jpg') ;border: 10px solid rgba(255, 0, 0, 0.5);padding: 10px;}
+    .position .origin{background-origin: padding-box;}
+    .position .border{background-origin: border-box;}
+    .position .content_1{background-origin: content-box;}
+
+    .clip div{width: 300px;height: 200px;  background: url('./html_imgs/merry-go-round_3.jpg') ;border: 10px solid rgba(255, 0, 0, 0.5);padding: 10px;}
+    .clip .origin{background-clip:border-box ;}
+    .clip .padding{background-clip: padding-box;;}
+    .clip .content_1{background-clip: content-box;}
+&lt;/style&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
