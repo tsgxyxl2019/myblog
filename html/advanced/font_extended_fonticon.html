@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./html_css/iconfont_css/iconfont.css">
+    <script src="./html_css/iconfont_css/iconfont.js"></script>
+    <style>
+        /* part1 */
+        @font-face {
+        font-family:tianmao_font;
+        src:url(https://at.alicdn.com/t/font_1401963178_8135476.eot);
+        src:url(https://at.alicdn.com/t/font_1401963178_8135476.eot?#iefix) format('embedded-opentype'), url(https://at.alicdn.com/t/font_1401963178_8135476.woff) format('woff'), url(https://at.alicdn.com/t/font_1401963178_8135476.ttf) format('truetype'), url(https://at.alicdn.com/t/font_1401963178_8135476.svg#iconfont) format('svg')
+        }
+
+        .shopping_cart::before{content: "󰅈";font-family: tianmao_font;font-size: 20px;color: blue;}
+        .mobile::before{content:"㑈" ;font-family: tianmao_font;font-size: 20px;color: red;}
+
+        /* part2 */
+        .icon {
+            width: 22px;
+            height: 22px;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+            display: inline;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>1. 利用现有的url引入字体图标</h3>
+        <h3>2. 利用iconfont网站引入字体图标</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <section class="part_1">
+                    <h3>1. 利用现有的url引入字体图标</h3>
+                    <div class="shopping_cart" style="margin-left: 20px;">
+                        这是一个购物车图标
+                    </div>
+                    <div class="mobile" style="margin-left: 20px;">
+                        这是一个手机图标
+                    </div>
+                </section>
+                <section class="part_2">
+                    <h3>2. 利用iconfont网站引入字体图标</h3>
+                    <p class="iconfont iconclock" style="margin-left: 20px;">这是一个闹钟</p>
+                    <p class="iconfont icongohome"style="margin-left: 20px;">这是一个goHome</p>
+                    <p class="iconfont iconhot" style="margin-left: 20px;">这是一个Hot</p>
+                    
+                    <svg class="icon" aria-hidden="true" style="margin-left: 20px;"> 
+                        <use xlink:href="#icontubiaozhizuomoban--"></use>
+                    </svg>
+                    <p>这是一个彩色的folder</p>
+                </section>
+            </div>
+        </div>
+        <h3>知识点：</h3>
+        <p style="font-weight: bold;">font-face是CSS3中的一个模块，他主要是把自己定义的Web字体嵌入到你的网页中。</p>
+        <p>好处:</p>
+        <p style="margin-left: 20px;">1.可以非常方便的改变大小和颜色 <br>
+            2.放大后不会失真 <br>
+            3.减少请求次数和提高加载速度 <br>
+            4.简化网页布局 <br>
+            5.减少设计师和前端工程师的工作量 <br>
+            6.可使用计算机没有提供的字体 <br>
+        </p>
+        <p>利用iconfont网站引入字体图标 步骤：
+            1. 注册iconfont账号
+            2. 创建项目
+            3. 将购物车里的字体图标添加至项目
+            4. 下载
+            5. 将跨平台文件和css文件引入
+        </p>
+        <p>注: 免费使用的字体图标网站:</p>
+        <p style="margin-left: 20px;">
+            1. 阿里巴巴矢量图标库：<br>
+            https://www.iconfont.cn : 提供了大量免费的字体图标。<br><br>
+            2. 自定义字体图标 <br>
+            https://icomoon.io/app : 在线生成字体图标 <br>
+        </p>
+        <p> 注： 彩色图标需要不同的引入方式，js和svg 引入</p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;section class="part_1"&gt;
+    &lt;h3&gt;1. 利用现有的url引入字体图标&lt;/h3&gt;
+    &lt;div class="shopping_cart" style="margin-left: 20px;"&gt;
+        这是一个购物车图标
+    &lt;/div&gt;
+    &lt;div class="mobile" style="margin-left: 20px;"&gt;
+        这是一个手机图标
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="part_2"&gt;
+    &lt;h3&gt;2. 利用iconfont网站引入字体图标&lt;/h3&gt;
+    &lt;p class="iconfont iconclock" style="margin-left: 20px;"&gt;这是一个闹钟&lt;/p&gt;
+    &lt;p class="iconfont icongohome" style="margin-left: 20px;"&gt;这是一个goHome&lt;/p&gt;
+    &lt;p class="iconfont iconhot" style="margin-left: 20px;"&gt;这是一个Hot&lt;/p&gt;
+    
+    &lt;svg class="icon" aria-hidden="true" style="margin-left: 20px;"&gt;
+        &lt;use xlink:href="#icontubiaozhizuomoban--"&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+    &lt;p&gt;这是一个彩色的folder&lt;/p&gt;
+&lt;/section&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;link rel="stylesheet" href="./html_css/iconfont_css/iconfont.css"&gt;
+&lt;script src="./html_css/iconfont_css/iconfont.js"&gt;&lt;/script&gt;
+&lt;style&gt;
+    /* part1 */
+    @font-face {
+    font-family:tianmao_font;
+    src:url(https://at.alicdn.com/t/font_1401963178_8135476.eot);
+    src:url(https://at.alicdn.com/t/font_1401963178_8135476.eot?#iefix) format('embedded-opentype'), url(https://at.alicdn.com/t/font_1401963178_8135476.woff) format('woff'), url(https://at.alicdn.com/t/font_1401963178_8135476.ttf) format('truetype'), url(https://at.alicdn.com/t/font_1401963178_8135476.svg#iconfont) format('svg')
+    }
+
+    .shopping_cart::before{content: "󰅈";font-family: tianmao_font;font-size: 20px;color: blue;}
+    .mobile::before{content:"㑈" ;font-family: tianmao_font;font-size: 20px;color: red;}
+
+    /* part2 */
+    .icon {
+        width: 22px;
+        height: 22px;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        display: inline;
+        float: left;
+    }
+&lt;/style&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
