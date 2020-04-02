@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <style>
+        .part1{width: auto;height: 650px;}
+        .part1 div{width: 300px;margin: 20px auto;-webkit-box-reflect: below 20px linear-gradient(rgba(255,255,255,0) 30% , rgba(255,255,255,1) 100%);}
+
+        .part2{width: auto;height: 650px;}
+        .part2 div{width: 300px;height:300px ;margin: 20px auto;}
+        .part2 div:nth-of-type(2){transform: scaleY(-1);background: linear-gradient(to bottom, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%) ,url('./html_imgs/mask_girl.jpg');}
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>1. 利用box-reflect实现元素下方的倒影</h3>
+        <h3>2. 利用scaleY实现元素下方的倒影</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <section class="part1">
+                    <h3>1. 利用box-reflect实现元素下方的倒影</h3>
+                    <div>
+                        <img src="./html_imgs/mask_girl.jpg" alt="">
+                    </div>
+                </section>
+                <section class="part2">
+                    <h3>2. 利用scaleY实现元素下方的倒影</h3>
+                    <div>
+                        <img src="./html_imgs/mask_girl.jpg" alt="">
+                    </div>
+                    <div></div>
+                </section>
+            </div>
+        </div>
+        <h3>知识点：</h3>
+        <p>box-reflect：above, below, left, right, 距离, 遮罩 | 渐变</p>
+        <p>注：渐变只能支持透明度的渐变，不支持颜色的渐变</p>
+        <p>注：scaleX(-1)左右镜面，scale(-1)全镜面</p>
+        <p>注：background里面写背景图和渐变时不能使用单一样式，一定要用复合样式，否则会覆盖</p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;section class="part1"&gt;
+    &lt;h3&gt;1. 利用box-reflect实现元素下方的倒影&lt;/h3&gt;
+    &lt;div&gt;
+        &lt;img src="./html_imgs/mask_girl.jpg" alt=""&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="part2"&gt;
+    &lt;h3&gt;2. 利用scaleY实现元素下方的倒影&lt;/h3&gt;
+    &lt;div&gt;
+        &lt;img src="./html_imgs/mask_girl.jpg" alt=""&gt;
+    &lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    .part1{width: auto;height: 650px;}
+    .part1 div{width: 300px;margin: 20px auto;-webkit-box-reflect: below 20px linear-gradient(rgba(255,255,255,0) 30% , rgba(255,255,255,1) 100%);}
+
+    .part2{width: auto;height: 650px;}
+    .part2 div{width: 300px;height:300px ;margin: 20px auto;}
+    .part2 div:nth-of-type(2){transform: scaleY(-1);background: linear-gradient(to bottom, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%) ,url('./html_imgs/mask_girl.jpg');}
+&lt;/style&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
