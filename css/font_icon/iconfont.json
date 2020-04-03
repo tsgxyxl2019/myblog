@@ -1,0 +1,51 @@
+{
+  "id": "1733984",
+  "name": "myblog",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "html+css selfstudy",
+  "glyphs": [
+    {
+      "icon_id": "896540",
+      "name": "book",
+      "font_class": "book1",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "6988488",
+      "name": "school",
+      "font_class": "school",
+      "unicode": "ec54",
+      "unicode_decimal": 60500
+    },
+    {
+      "icon_id": "12309672",
+      "name": "book",
+      "font_class": "book",
+      "unicode": "e7ed",
+      "unicode_decimal": 59373
+    },
+    {
+      "icon_id": "12934645",
+      "name": "book",
+      "font_class": "tubiaozhizuomoban-",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "8106227",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "8106288",
+      "name": "nickname",
+      "font_class": "nickname",
+      "unicode": "e6a0",
+      "unicode_decimal": 59040
+    }
+  ]
+}

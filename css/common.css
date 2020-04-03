@@ -14,7 +14,7 @@ a{text-decoration: none;color: #646464;}
 .head .title{line-height: 16px; font-size: 16px;margin: 20px 25px; font-weight: bold; }
 .head .menu{height: 57px;}
 .head .menu ul{height: 57px;}
-.head .menu ul li{display: block; line-height: 16px; font-size: 16px;margin: 20px 25px;}
+.head .menu ul li{display: block; line-height: 16px; font-size: 16px;margin: 20px 15px;}
 .head .menu ul li a{color: white;}
 .head .menu ul li .selected {border-bottom: 2px solid #46bd87; }
 
