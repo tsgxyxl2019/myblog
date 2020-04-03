@@ -5,34 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./html_css/html_css.css">
     <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .part1 .outer{width:auto; border: 2px solid black; margin: 20px auto;overflow: hidden;}
+        .part1 .outer div{color: white;margin-bottom: -2000px;padding-bottom: 2000px;}
+        .part1 .outer .box1{width: 100px;background:blue ; float: left;}
+        .part1 .outer .box2{width: 150px;background:red ; float: right;}
+
+        .part2 .containerbox{width:auto;height: 300px; border: 2px solid black; margin: 20px auto;overflow: hidden;}
+        .part2 .containerbox .headerbox{height: 50px;width: 100%;background: grey;color: white;text-align: center;}
+        .part2 .containerbox .contentbox{height: 100%;width: 100%;background: blue;color: red;text-align: center;float:left}
+        .part2 .containerbox .leftbox{float: left;width: 100px; height: 80%;background: green;margin-left: -100%;color: white;}
+        .part2 .containerbox .rightbox{float: left;width: 150px; height: 80%;background: papayawhip;margin-left: -150px;}
+    </style>
 </head>
 <body>
     <div class="content">
         <h2>需求:</h2>
-        <h3>点击图片一部分内容以转链接，空白非设置部分无效</h3>
-        <h3>示例：</h3>
-        <img class= "example" src="./html_example/.gif" alt="">
+        <h3>1. 等高布局,左侧元素和右侧元素等高, 即使某一元素高度高于另一元素</h3>
+        <h3>2. 双飞翼布局,左右元素固定高度, 中间自适应浏览器或父元素的宽度</h3>
         <div class="test_area">
             <h3>Test_area：</h3>
             <div>
-                
+                <section class="part1">
+                    <h3>1. 等高布局,左侧元素和右侧元素等高, 即使某一元素高度高于另一元素</h3>
+                    <div class="outer">
+                        <div class="box1">
+                            <p>左侧的高度高于右侧 </p>
+                            <p>左侧的高度高于右侧 </p>
+                            <p>左侧的高度高于右侧 </p>
+                            <p>左侧的高度高于右侧 </p>
+                            <p>左侧的高度高于右侧 </p>
+                            <p>左侧的高度高于右侧 </p>
+                            <p>左侧的高度高于右侧 </p>
+                            <p>左侧的高度高于右侧 </p>
+                        </div>
+                        <div class="box2">
+                            <p>右侧由padding-bottom补足高度</p>
+                            <p>右侧由padding-bottom补足高度</p>
+                            <p>右侧由padding-bottom补足高度</p>
+                            <p>右侧由padding-bottom补足高度</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="part2">
+                    <h3>2. 双飞翼布局,左右元素固定高度, 中间自适应浏览器或父元素的宽度</h3>
+                    <div class="containerbox">
+                        <div class="headerbox">这是头部, 利用float和margin-left负值进行双飞翼布局</div>
+                        <div class="contentbox">这是版心区域</div>
+                        <div class="leftbox">margin-left: -100%; 这是因为版心区域占了100%，版心可用calc减去左右部分得到宽度，并进行定位使居中</div>
+                        <div class="rightbox">width: 150px; margin-left: -150px;</div>
+                    </div>
+                </section>
             </div>
         </div>
-        <h3>知识点：</h3>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <h3>知识点：1. 等高布局 2.双飞翼布局</h3>
+        <p>1. 等高布局利用 margin-bottom为负极大值和padding-bottom为正极大值实现等高布局 </p>
+        <p>注： 父容器的高是由元素的高加上margin的高确定的 所以 margin为负的时候 父容器的高小于元素的高度。</p>
+        <p>2. 双飞翼布局布局可由一下几种方式构成：<br>
+            <span style="margin-left: 20px;">1. BFC规范</span> <br>
+            <span style="margin-left: 20px;">2. 定位</span> <br>
+            <span style="margin-left: 20px;">3. 浮动</span> <br>
+            <span style="margin-left: 20px;">4. flex弹性</span> <br>
+        </p>
+        <p>注: 由于双飞翼布局需要整个文档流的宽度,所以此双飞翼实例暂无法进行版心宽度自适应</p>
         <h3>html源代码：</h3>
 <pre>
 <code>
-
+&lt;section class="part1"&gt;
+    &lt;h3&gt;1. 等高布局,左侧元素和右侧元素等高, 即使某一元素高度高于另一元素&lt;/h3&gt;
+    &lt;div class="outer"&gt;
+        &lt;div class="box1"&gt;
+            &lt;p&gt;左侧的高度高于右侧 &lt;/p&gt;
+            &lt;p&gt;左侧的高度高于右侧 &lt;/p&gt;
+            &lt;p&gt;左侧的高度高于右侧 &lt;/p&gt;
+            &lt;p&gt;左侧的高度高于右侧 &lt;/p&gt;
+            &lt;p&gt;左侧的高度高于右侧 &lt;/p&gt;
+            &lt;p&gt;左侧的高度高于右侧 &lt;/p&gt;
+            &lt;p&gt;左侧的高度高于右侧 &lt;/p&gt;
+            &lt;p&gt;左侧的高度高于右侧 &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="box2"&gt;
+            &lt;p&gt;右侧由padding-bottom补足高度&lt;/p&gt;
+            &lt;p&gt;右侧由padding-bottom补足高度&lt;/p&gt;
+            &lt;p&gt;右侧由padding-bottom补足高度&lt;/p&gt;
+            &lt;p&gt;右侧由padding-bottom补足高度&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="part2"&gt;
+    &lt;h3&gt;2. 双飞翼布局,左右元素固定高度, 中间自适应浏览器或父元素的宽度&lt;/h3&gt;
+    &lt;div class="containerbox"&gt;
+        &lt;div class="headerbox"&gt;这是头部, 利用float和margin-left负值进行双飞翼布局&lt;/div&gt;
+        &lt;div class="contentbox"&gt;这是版心区域&lt;/div&gt;
+        &lt;div class="leftbox"&gt;margin-left: -100%; 这是因为版心区域占了100%，版心可用calc减去左右部分得到宽度，并进行定位使居中&lt;/div&gt;
+        &lt;div class="rightbox"&gt;width: 150px; margin-left: -150px;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
 </code>
 </pre>
         <h3>css源代码：</h3>
 <pre>
 <code>
+&lt;style&gt;
+    *{margin: 0;padding: 0;}
+    .part1 .outer{width:auto; border: 2px solid black; margin: 20px auto;overflow: hidden;}
+    .part1 .outer div{color: white;margin-bottom: -2000px;padding-bottom: 2000px;}
+    .part1 .outer .box1{width: 100px;background:blue ; float: left;}
+    .part1 .outer .box2{width: 150px;background:red ; float: right;}
 
+    .part2 .containerbox{width:auto;height: 300px; border: 2px solid black; margin: 20px auto;overflow: hidden;}
+    .part2 .containerbox .headerbox{height: 50px;width: 100%;background: grey;color: white;text-align: center;}
+    .part2 .containerbox .contentbox{height: 100%;width: 100%;background: blue;color: red;text-align: center;float:left}
+    .part2 .containerbox .leftbox{float: left;width: 100px; height: 80%;background: green;margin-left: -100%;color: white;}
+    .part2 .containerbox .rightbox{float: left;width: 150px; height: 80%;background: papayawhip;margin-left: -150px;}
+&lt;/style&gt;
 </code>
 </pre>
         
