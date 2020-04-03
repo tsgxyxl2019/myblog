@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./html_css/html_css.css">
+    <title>Document</title>
+    <style>
+        .part1 div{width: 200px; height:200px; float: left; border: 1px solid black;margin: 20px 50px;}
+        .part1 div:nth-of-type(1):hover{background: red;color:white}
+        .part1 div:nth-of-type(2)::selection{background: red;color:white}
+
+        .clear::after{content: "";display: block;clear: both;}
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>需求:</h2>
+        <h3>1. 伪类和伪元素之间的区别</h3>
+        <div class="test_area">
+            <h3>Test_area：</h3>
+            <div>
+                <h3>1. 伪类和伪元素之间的区别</h3>
+                <section class="part1 clear">
+                    <div>这是利用伪类改变背景颜色和字体颜色,这是利用伪类改变背景颜色和字体颜色,这是利用伪类改变背景颜色和字体颜色,这是利用伪类改变背景颜色和字体颜色</div>
+                    <div>这是利用伪元素使得自定义容器内改变背景字体颜色,这是利用伪元素使得自定义容器内改变背景字体颜色,这是利用伪元素使得自定义容器内改变背景字体颜色,这是利用伪元素使得自定义容器内改变背景字体颜色</div>
+                </section>
+            </div>
+        </div>
+        <h3>知识点：伪类与伪元素</h3>
+        <p>在CSS2.1中对伪类和伪元素的区别比较模糊。CSS3中对这两个概念做了相对较清晰地解释，并且在语法上也做了很明显的区分。 <br>
+
+            CSS3中规定伪类由一个冒号开始，然后为伪类的名称；伪元素由两个冒泡开始，然后为伪元素的名称。<br>
+        </p>
+        <p>伪类本质上是为了弥补常规CSS选择器的不足，以便获取到更多信息。通常表示获取不存在与DOM树中的信息，或获取不能被常规CSS选择器获取的信息。 : hover, : focus, : empty, …</p>
+        <p>伪元素本质上是创建了一个有内容的虚拟容器。这个容器不包含任何DOM元素，但是可以包含内容。另外，开发者还可以为伪元素定制样式。 :: selection, :: first-line /  first-letter, :: before  / after, …
+        </p>
+        <p>注：clear float 利用的就是伪元素</p>
+        <h3>html源代码：</h3>
+<pre>
+<code>
+&lt;section class="part1 clear"&gt;
+    &lt;div&gt;这是利用伪类改变背景颜色和字体颜色,这是利用伪类改变背景颜色和字体颜色,这是利用伪类改变背景颜色和字体颜色,这是利用伪类改变背景颜色和字体颜色&lt;/div&gt;
+    &lt;div&gt;这是利用伪元素使得自定义容器内改变背景字体颜色,这是利用伪元素使得自定义容器内改变背景字体颜色,这是利用伪元素使得自定义容器内改变背景字体颜色,这是利用伪元素使得自定义容器内改变背景字体颜色&lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+        <h3>css源代码：</h3>
+<pre>
+<code>
+&lt;style&gt;
+    .part1 div{width: 200px; height:200px; float: left; border: 1px solid black;margin: 20px 50px;}
+    .part1 div:nth-of-type(1):hover{background: red;color:white}
+    .part1 div:nth-of-type(2)::selection{background: red;color:white}
+
+    .clear::after{content: "";display: block;clear: both;}
+&lt;/style&gt;
+</code>
+</pre>
+        
+    </div>
+    
+</body>
+</html>
