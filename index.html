@@ -6,10 +6,10 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="keywords" content="tsgxyxl0818"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/font_icon/iconfont.css">
+    <link rel="stylesheet" href="./myblog/css/common.css">
+    <link rel="stylesheet" href="./myblog/css/font_icon/iconfont.css">
     <script type="text/javascript">
         $(document).ready(function(){
             $("li.point_child_child_list").click(function(){
@@ -20,14 +20,14 @@
                     $(this).parents(".point").children(".basic").children(".point_child").children(".point_child_list").children(".point_child_child").children(".point_child_child_list").removeClass("nav_selected");
                     $(this).parents(".point").children(".basic").removeClass("nav_selected");
                     $(this).parents(".point").children(".basic").children(".point_child").children(".point_child_list").removeClass("nav_selected");
-                    document.getElementById("doc_id").src = "./html/advanced/" + $(this).attr("id");
+                    document.getElementById("doc_id").src = "./myblog/html/advanced/" + $(this).attr("id");
                     
 
                 } else {
                     $(this).parents(".point").children(".advanced").children(".point_child").children(".point_child_list").children(".point_child_child").children(".point_child_child_list").removeClass("nav_selected");
                     $(this).parents(".point").children(".advanced").removeClass("nav_selected");
                     $(this).parents(".point").children(".advanced").children(".point_child").children(".point_child_list").removeClass("nav_selected");
-                    document.getElementById("doc_id").src = "./html/basic/" + $(this).attr("id");
+                    document.getElementById("doc_id").src = "./myblog/html/basic/" + $(this).attr("id");
                 }
                 
             });
@@ -72,7 +72,7 @@
                         <div class="bottom_line"></div>
                     </li>
                     <li class="l">
-                        <a class="iconfont iconnickname" href="./html/menu/corona.html" target="_blank">疫情地图</a>
+                        <a class="iconfont iconnickname" href="./myblog/html/menu/corona.html" target="_blank">疫情地图</a>
                         <div class="bottom_line"></div>
                     </li>
                 </ul>
@@ -212,7 +212,7 @@
 
     <section id="iframe_content" class="l">
         <div class="quote"> 
-            <iframe id="doc_id" src="./html/advanced/click_partof_img.html" frameborder="0" scrolling="no" onload="iframeLoad()"></iframe>
+            <iframe id="doc_id" src="./myblog/html/advanced/click_partof_img.html" frameborder="0" scrolling="no" onload="iframeLoad()"></iframe>
         </div>
     </section>
 </body>
