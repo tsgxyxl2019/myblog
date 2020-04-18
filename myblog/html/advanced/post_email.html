@@ -19,7 +19,7 @@
         input.name="vname[]";
         input.autocomplete = "off"
         input.ondblclick=function remo(){alert("删除学生");student_emailarea.removeChild(div)};//点击删除控件
-        input.value="";
+        input.value="1085072143@qq.com";
         input.id="vid"+i;
         div.appendChild(input);
         student_emailarea.appendChild(div);
@@ -35,13 +35,13 @@
             <div>
                 <fieldset style="margin-left: 30px; margin-bottom: 30px;">
                     <legend>迅达英语Email控件</legend>
-                    <form style="margin-left: 30px; margin-bottom: 30px;" action="auto_email.php" method="POST" >
-                        
+                    <form style="margin-left: 30px; margin-bottom: 30px;" action="auto_email.php" method="POST" enctype="multipart/form-data">
                         <p>email_title:</p>
-                        <input type="text" name="email_title" placeholder="请填写邮件的标题..." autocomplete ="off">
+                        <input type="text" name="email_title" placeholder="请填写邮件的标题..." autocomplete ="off" value="迅达英语发福利了！！！">
                         <p>email_content:</p>
-                        <textarea style="display: block;" name="email_message" rows="10" cols="30" placeholder="请填写邮件的内容..." autocomplete ="off"></textarea>
+                        <textarea style="display: block;" name="email_message" rows="10" cols="30" placeholder="请填写邮件的内容..." autocomplete ="off">恭喜您获得VIPKID688元英语试听课+100元在线课程代金券</textarea>
                         <div id="student_emailarea"></div>
+                        <input style="display: block;" type="file" name="email_attachment">
                         <input style="margin-top: 50px;" type="button" onclick="add()" value="添加" />
                         <input style="margin-top: 50px;" type="submit" name="" id="">
                     </form>
@@ -49,23 +49,11 @@
             </div>
         </div>
         <h3>知识点：</h3>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <h3>html源代码：</h3>
-<pre>
-<code>
-
-</code>
-</pre>
-        <h3>css源代码：</h3>
-<pre>
-<code>
-
-</code>
-</pre>
-        
+        <p>1.利用composer 安装phpmailer"composer require phpmailer/phpmailer"</p>
+        <p>2.利用$post传邮箱地址给php</p>
+        <p>3.设置发件人的app二级验证码</p>
+        <p>4.使用AddCC进行群发</p>
+        <p>5.使用验证防止注入攻击</p>
     </div>
     
 </body>

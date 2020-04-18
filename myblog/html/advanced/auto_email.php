@@ -16,7 +16,7 @@ function crtArr($post_array){
     $arr = array(); //声明一个空的数组
     $i =1;
     foreach($post_array as $value){ 
-        echo $value." /person $i".'<br />'; 
+        // echo $value." /person $i".'<br />'; 
         $arr[$value] = 'Person '.$i;
         $i++;
     } 
@@ -25,7 +25,6 @@ function crtArr($post_array){
 $recipient_list = crtArr($_POST['vname']);
 $email_title = $_POST['email_title'];
 $email_message = $_POST['email_message'];
-
 try {
     // //Server settings
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
@@ -85,19 +84,21 @@ try {
     
     $mail->IsHTML(true); //是否启用html
     
-    $mail->AddAddress('1085072143@qq.com'); //单一收件用户
+    // $mail->AddAddress('1085072143@qq.com'); //单一收件用户
+
+    $mail->addAttachment($_FILES['email_attachment']['tmp_name'],$_FILES['email_attachment']['name']); //接受附件
 
     //群发邮件
-    $recipients = array(
-        '1085072143@qq.com' => 'Person One',
-        '2589422180@qq.com' => 'Person Two',
-        // ..
-     );
-
-
-    var_dump($recipients);
+    // $recipients = array(
+    //     '1085072143@qq.com' => 'Person One',
+    //     '2589422180@qq.com' => 'Person Two',
+    //     // ..
+    //  );
+    // var_dump($recipients);
     echo "<hr>";
-    var_dump($recipient_list);
+
+
+    // var_dump($recipient_list);
     foreach($recipient_list as $email => $name)
     {
         $mail->AddCC($email, $name);
