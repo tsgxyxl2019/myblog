@@ -5,17 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./html_css/html_css.css">
     <title>Document</title>
+    <script>
+        var i=1;
+        function add(){
+        var student_emailarea=document.getElementById("student_emailarea");
+        var input=document.createElement("input");
+        var div=document.createElement("div");
+        div.style.margin="20px 10px";
+        div.innerHTML="学生"+i + ": ";
+        div.id=i
+        i=i+1;
+        input.type="email"
+        input.name="vname[]";
+        input.autocomplete = "off"
+        input.ondblclick=function remo(){alert("删除学生");student_emailarea.removeChild(div)};//点击删除控件
+        input.value="";
+        input.id="vid"+i;
+        div.appendChild(input);
+        student_emailarea.appendChild(div);
+    }
+    </script>
 </head>
 <body>
     <div class="content">
         <h2>需求:</h2>
         <h3>填写邮件内容,群发邮件</h3>
-        <h3>示例：</h3>
-        <img class= "example" src="./html_example/.gif" alt="">
         <div class="test_area">
             <h3>Test_area：</h3>
             <div>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <fieldset style="margin-left: 30px; margin-bottom: 30px;">
+                    <legend>迅达英语Email控件</legend>
+                    <form style="margin-left: 30px; margin-bottom: 30px;" action="auto_email.php" method="POST" >
+                        
+                        <p>email_title:</p>
+                        <input type="text" name="email_title" placeholder="请填写邮件的标题..." autocomplete ="off">
+                        <p>email_content:</p>
+                        <textarea style="display: block;" name="email_message" rows="10" cols="30" placeholder="请填写邮件的内容..." autocomplete ="off"></textarea>
+                        <div id="student_emailarea"></div>
+                        <input style="margin-top: 50px;" type="button" onclick="add()" value="添加" />
+                        <input style="margin-top: 50px;" type="submit" name="" id="">
+                    </form>
+                </fieldset>
             </div>
         </div>
         <h3>知识点：</h3>
