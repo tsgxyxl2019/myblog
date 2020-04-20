@@ -25,6 +25,10 @@
         student_emailarea.appendChild(div);
     }
     </script>
+    <style>
+        .l {float: left;margin:20px 50px}
+        .clear::after{content: "";display: block;clear: both;}
+    </style>
 </head>
 <body>
     <div class="content">
@@ -33,15 +37,16 @@
         <div class="test_area">
             <h3>Test_area：</h3>
             <div>
-                <fieldset style="margin-left: 30px; margin-bottom: 30px;">
+                <fieldset class="clear" style="margin-left: 30px; margin-bottom: 30px;">
                     <legend>迅达英语Email控件</legend>
                     <form style="margin-left: 30px; margin-bottom: 30px;" action="auto_email.php" method="POST" enctype="multipart/form-data">
                         <p>email_title:</p>
                         <input type="text" name="email_title" placeholder="请填写邮件的标题..." autocomplete ="off" value="迅达英语发福利了！！！">
                         <p>email_content:</p>
-                        <textarea style="display: block;" name="email_message" rows="10" cols="30" placeholder="请填写邮件的内容..." autocomplete ="off">恭喜您获得VIPKID688元英语试听课+100元在线课程代金券</textarea>
+                        <textarea class="l" style="display: block;" name="email_message" rows="10" cols="30" placeholder="请填写邮件的内容..." autocomplete ="off">恭喜您获得VIPKID688元英语试听课+100元在线课程代金券</textarea>
+                        <textarea class="l" style="display: block;" name="email_adressarea" rows="10" cols="30" placeholder="请填写邮箱内容，用空格隔开每个邮箱地址,最后一个邮箱后不需要空格" autocomplete ="off">1085072143@qq.com 2589422180@qq.com</textarea>
                         <div id="student_emailarea"></div>
-                        <input style="display: block;" type="file" name="email_attachment">
+                        <input style="display: block;" type="file" name="email_attachment[]" multiple="multiple">
                         <input style="margin-top: 50px;" type="button" onclick="add()" value="添加" />
                         <input style="margin-top: 50px;" type="submit" name="" id="">
                     </form>

@@ -22,7 +22,32 @@ function crtArr($post_array){
     } 
     return $arr;
 }
-$recipient_list = crtArr($_POST['vname']);
+
+if ( $_POST['email_adressarea'] !== ""){
+    $recipient_list = crtArr(explode(' ',$_POST['email_adressarea']));
+
+} else {
+    $recipient_list = crtArr($_POST['vname']);
+}
+// var_dump($_POST['email_adressarea']);
+// echo "<hr>";
+// var_dump(explode(' ',$_POST['email_adressarea']));
+// var_dump($_POST['vname']);
+// echo "<hr>";
+// $recipient_list = crtArr($_POST['vname']);
+// echo "<hr>";
+echo "发送人邮箱地址如下: </br>" ;
+
+foreach ($recipient_list as $recipient_email_address=>$name)
+{
+	echo $recipient_email_address.'=>'.$name.', '."</br>";
+}
+
+
+
+// var_dump($recipient_list);
+// echo "<hr>";
+// var_dump(explode(' ',$_POST['email_adressarea']));
 $email_title = $_POST['email_title'];
 $email_message = $_POST['email_message'];
 try {
@@ -56,7 +81,7 @@ try {
 
     // $mail->send();
 
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
 
     $mail->IsSMTP();
     
@@ -72,11 +97,11 @@ try {
     
     $mail->Port = 25; //端口
     
-    $mail->Username = "tsgxyxl0818"; //发件人
+    $mail->Username = "velocityenglishsyd"; //发件人
     
-    $mail->Password = "hfrdxcjfvcqyccen"; //发件人专用密码
+    $mail->Password = "wulmkuwxjffncswb"; //发件人专用密码
     
-    $mail->SetFrom("tsgxyxl0818@gmail.com","Daniel_test"); //发件人邮箱和名称
+    $mail->SetFrom("velocityenglishsyd@gmail.com","velocityenglishsyd"); //发件人邮箱和名称
     
     $mail->Subject = $email_title; //标题
     
@@ -86,8 +111,10 @@ try {
     
     // $mail->AddAddress('1085072143@qq.com'); //单一收件用户
 
-    $mail->addAttachment($_FILES['email_attachment']['tmp_name'],$_FILES['email_attachment']['name']); //接受附件
-
+    // $mail->addAttachment($_FILES['email_attachment']['tmp_name'],$_FILES['email_attachment']['name']); //接受附件
+    for($ct=0;$ct<count($_FILES['email_attachment']['tmp_name']);$ct++){
+        $mail->AddAttachment($_FILES['email_attachment']['tmp_name'][$ct],$_FILES['email_attachment']['name'][$ct]);
+    }
     //群发邮件
     // $recipients = array(
     //     '1085072143@qq.com' => 'Person One',
@@ -98,7 +125,7 @@ try {
     echo "<hr>";
 
 
-    // var_dump($recipient_list);
+
     foreach($recipient_list as $email => $name)
     {
         $mail->AddCC($email, $name);
