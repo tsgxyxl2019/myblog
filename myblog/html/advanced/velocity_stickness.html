@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./html_css/velocity_font/iconfont.css">
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,li{list-style: none;}
+        img{display: block;}
+        body{height: 2000px;}
+        
+        #rightside-bar{position: absolute;top: 200px;right:20px;margin-right: 50px;float: right;height: inherit;}
+        #rightside-bar #rightside-bar-menu{width: 80px;border: 1px black solid;position: sticky;top: 220px; margin-top: 100px;}
+        #rightside-bar #rightside-bar-menu li{width: 80px;border-bottom: 2px dashed black;text-align:center;margin-bottom: 5px;}
+        #rightside-bar #rightside-bar-menu li:nth-last-child(1){border: none;}
+        #rightside-bar #rightside-bar-menu li button{width: 70px; padding: 5px 3px; background: #fff; color: #4daff9; border: 0px;cursor: pointer;outline: none;}
+
+    </style>
+</head>
+<body>
+    <div id="rightside-bar">
+        <ul id="rightside-bar-menu">
+            <li id="login" class="iconfont icon-user_login">
+                <button>登录</button>
+            </li>
+            <li id="regist" class="iconfont icon-login_register">
+                <button>注册</button>
+            </li>
+            <li id="phone" class="iconfont icon-phone">
+                <img src="" alt="">
+                <button>电话交流</button>
+            </li>
+            <li id="consult" class="iconfont icon-consultonline">
+                <img src="" alt="">
+                <button>在线咨询</button>
+            </li>
+            <li id="freematerial" class="iconfont icon-material">
+                <img src="" alt="">
+                <button>免费资料</button>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
