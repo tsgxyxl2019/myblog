@@ -6,270 +6,81 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "372126",
-      "name": "cc-chat",
-      "font_class": "cc-chat",
-      "unicode": "e620",
-      "unicode_decimal": 58912
+      "icon_id": "3560298",
+      "name": "right-arrow",
+      "font_class": "right-arrow",
+      "unicode": "e687",
+      "unicode_decimal": 59015
     },
     {
-      "icon_id": "400348",
-      "name": "chat",
-      "font_class": "chat",
-      "unicode": "e675",
-      "unicode_decimal": 58997
+      "icon_id": "12779358",
+      "name": "收 藏",
+      "font_class": "shoucang",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
     },
     {
-      "icon_id": "1293212",
-      "name": "chat-1",
-      "font_class": "chat-1",
-      "unicode": "e62a",
-      "unicode_decimal": 58922
-    },
-    {
-      "icon_id": "1546317",
-      "name": "chat 2",
-      "font_class": "chat1",
-      "unicode": "e611",
-      "unicode_decimal": 58897
-    },
-    {
-      "icon_id": "6804061",
-      "name": "Chat-Help 1",
-      "font_class": "Chat-Help",
-      "unicode": "e850",
-      "unicode_decimal": 59472
-    },
-    {
-      "icon_id": "6807665",
-      "name": "Chat-Help 1",
-      "font_class": "Chat-Help1",
-      "unicode": "ec9f",
-      "unicode_decimal": 60575
-    },
-    {
-      "icon_id": "1471601",
-      "name": "material",
-      "font_class": "material",
-      "unicode": "e61d",
-      "unicode_decimal": 58909
-    },
-    {
-      "icon_id": "9339944",
-      "name": "material",
-      "font_class": "material1",
-      "unicode": "e617",
-      "unicode_decimal": 58903
-    },
-    {
-      "icon_id": "9357589",
-      "name": "MATERIAL",
-      "font_class": "MATERIAL",
-      "unicode": "e60b",
-      "unicode_decimal": 58891
-    },
-    {
-      "icon_id": "12924957",
-      "name": "materials",
-      "font_class": "materials",
-      "unicode": "e604",
-      "unicode_decimal": 58884
-    },
-    {
-      "icon_id": "290063",
-      "name": "phone",
-      "font_class": "phone",
-      "unicode": "e6ad",
-      "unicode_decimal": 59053
-    },
-    {
-      "icon_id": "415239",
-      "name": "phone",
-      "font_class": "phone1",
-      "unicode": "e637",
-      "unicode_decimal": 58935
-    },
-    {
-      "icon_id": "425575",
-      "name": "Consult Online",
-      "font_class": "consultonline",
+      "icon_id": "12288054",
+      "name": "book",
+      "font_class": "book4",
       "unicode": "e60a",
       "unicode_decimal": 58890
     },
     {
-      "icon_id": "491646",
-      "name": "phone",
-      "font_class": "phone2",
-      "unicode": "e661",
-      "unicode_decimal": 58977
+      "icon_id": "7594846",
+      "name": "online",
+      "font_class": "crm_topmenu_customer",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
     },
     {
-      "icon_id": "499044",
-      "name": "phone_02",
-      "font_class": "phone02",
-      "unicode": "e645",
-      "unicode_decimal": 58949
-    },
-    {
-      "icon_id": "569227",
-      "name": "svg_consult",
-      "font_class": "svgconsult",
-      "unicode": "e647",
-      "unicode_decimal": 58951
-    },
-    {
-      "icon_id": "1219233",
-      "name": "eglass-phone",
-      "font_class": "phone3",
-      "unicode": "e602",
-      "unicode_decimal": 58882
-    },
-    {
-      "icon_id": "1455795",
-      "name": "phone",
-      "font_class": "woyaoqingsu",
-      "unicode": "e621",
-      "unicode_decimal": 58913
-    },
-    {
-      "icon_id": "3746971",
-      "name": "phone",
-      "font_class": "phone4",
-      "unicode": "e606",
-      "unicode_decimal": 58886
-    },
-    {
-      "icon_id": "5297085",
-      "name": "phone",
-      "font_class": "phone5",
-      "unicode": "e630",
-      "unicode_decimal": 58928
-    },
-    {
-      "icon_id": "5647462",
-      "name": "consult",
-      "font_class": "Group",
-      "unicode": "e60c",
-      "unicode_decimal": 58892
-    },
-    {
-      "icon_id": "6109995",
-      "name": "phone",
-      "font_class": "phone6",
-      "unicode": "e614",
-      "unicode_decimal": 58900
-    },
-    {
-      "icon_id": "8642076",
-      "name": "PHONE CALL",
-      "font_class": "PHONECALL",
-      "unicode": "e7ea",
-      "unicode_decimal": 59370
-    },
-    {
-      "icon_id": "10564861",
-      "name": "Phone chat",
-      "font_class": "Phonechat",
-      "unicode": "e732",
-      "unicode_decimal": 59186
-    },
-    {
-      "icon_id": "11420339",
-      "name": "un-consult-o",
-      "font_class": "un-consult-o",
-      "unicode": "e6ae",
-      "unicode_decimal": 59054
-    },
-    {
-      "icon_id": "12195268",
-      "name": "consultation",
-      "font_class": "consultation",
-      "unicode": "eca7",
-      "unicode_decimal": 60583
-    },
-    {
-      "icon_id": "12752108",
-      "name": "Consulting Expenses",
-      "font_class": "ConsultingExpenses",
-      "unicode": "e673",
-      "unicode_decimal": 58995
-    },
-    {
-      "icon_id": "13725252",
-      "name": "ConsultOutline",
-      "font_class": "ConsultOutline",
-      "unicode": "e66c",
-      "unicode_decimal": 58988
-    },
-    {
-      "icon_id": "569338",
-      "name": "svg_telephone",
-      "font_class": "svgtelephone",
-      "unicode": "e6a6",
-      "unicode_decimal": 59046
-    },
-    {
-      "icon_id": "7210573",
-      "name": "register",
-      "font_class": "register",
-      "unicode": "e6d6",
-      "unicode_decimal": 59094
-    },
-    {
-      "icon_id": "8017582",
-      "name": "login_register",
-      "font_class": "login_register",
-      "unicode": "e6c2",
-      "unicode_decimal": 59074
-    },
-    {
-      "icon_id": "10483867",
-      "name": "01_telephone",
-      "font_class": "_telephone",
-      "unicode": "e605",
-      "unicode_decimal": 58885
-    },
-    {
-      "icon_id": "1446461",
-      "name": "login_user",
-      "font_class": "login_user",
-      "unicode": "e622",
-      "unicode_decimal": 58914
-    },
-    {
-      "icon_id": "2207721",
-      "name": "icon-user_login",
-      "font_class": "user_login",
-      "unicode": "e649",
-      "unicode_decimal": 58953
-    },
-    {
-      "icon_id": "8017608",
-      "name": "login_username",
-      "font_class": "login_username",
-      "unicode": "e6ca",
-      "unicode_decimal": 59082
-    },
-    {
-      "icon_id": "12270790",
-      "name": "login_proxy",
-      "font_class": "login_proxy",
-      "unicode": "e60f",
-      "unicode_decimal": 58895
-    },
-    {
-      "icon_id": "254450",
-      "name": "loginu",
-      "font_class": "dengluren",
+      "icon_id": "7639743",
+      "name": "Online Customer",
+      "font_class": "OnlineCustomer",
       "unicode": "e627",
       "unicode_decimal": 58919
     },
     {
-      "icon_id": "5148624",
-      "name": "login_账户",
-      "font_class": "login_zhanghu",
-      "unicode": "e64a",
-      "unicode_decimal": 58954
+      "icon_id": "11235284",
+      "name": "translate",
+      "font_class": "translate3",
+      "unicode": "eae3",
+      "unicode_decimal": 60131
+    },
+    {
+      "icon_id": "12018038",
+      "name": "translate",
+      "font_class": "translate4",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "994185",
+      "name": "phone",
+      "font_class": "phone1",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "10225000",
+      "name": "phone",
+      "font_class": "phone2",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "3311644",
+      "name": "login",
+      "font_class": "login1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "1502977",
+      "name": "login",
+      "font_class": "login",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
     }
   ]
 }

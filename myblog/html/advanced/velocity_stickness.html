@@ -4,43 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./html_css/velocity_font/iconfont.css">
+    <link rel="stylesheet" href="./html_css/velocity_font/animate.css">
     <style>
         *{margin: 0;padding: 0;}
         ul,li{list-style: none;}
+        li:hover{filter:brightness(110%)}
         img{display: block;}
         body{height: 2000px;}
+        a{text-decoration: none;}
+        .rightside_bar{position: absolute;top: 200px;right:0 ;float: right;height: inherit;}
+        .rightside_bar .rightside_bar_menu{width: 80px;position: sticky;top: 220px; margin-top: 100px;}
+        .rightside_bar .rightside_bar_menu .rightside_bar_menu_list{width: 100%;border-bottom: 2px dashed black;text-align:center;padding: 5px 0;cursor: pointer;position: relative;box-sizing: border-box;background: #169eb7}
+        .rightside_bar .rightside_bar_menu .rightside_bar_menu_list:nth-of-type(1){padding-top: 10px;border-top-left-radius: 10px;border-top-right-radius: 10px;}
+        .rightside_bar .rightside_bar_menu .rightside_bar_menu_list:last-child{border: none;padding-bottom: 5px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;}
         
-        #rightside-bar{position: absolute;top: 200px;right:20px;margin-right: 50px;float: right;height: inherit;}
-        #rightside-bar #rightside-bar-menu{width: 80px;border: 1px black solid;position: sticky;top: 220px; margin-top: 100px;}
-        #rightside-bar #rightside-bar-menu li{width: 80px;border-bottom: 2px dashed black;text-align:center;margin-bottom: 5px;}
-        #rightside-bar #rightside-bar-menu li:nth-last-child(1){border: none;}
-        #rightside-bar #rightside-bar-menu li button{width: 70px; padding: 5px 3px; background: #fff; color: #4daff9; border: 0px;cursor: pointer;outline: none;}
+        .rightside_bar .rightside_bar_menu .rightside_bar_menu_list .rightside_bar_menu_list_title{font-size:14px;display:block;width: 100%; padding: 5px 3px 5px 3px; background: #169eb7; color: white; margin: 0px auto;border-radius: 10px;box-sizing: border-box;}
+        .rightside_bar .rightside_bar_menu .contact .contact_bar {position: absolute;right: 85px;top: -40px;}
+        .rightside_bar .rightside_bar_menu .contact .contact_bar li{width:100px;font-size: 14px;padding: 5px 3px 10px 3px; text-align:center;margin-bottom: 10px;cursor: pointer;background:#169eb7;border-radius: 5px;display:none;}
+        .rightside_bar .rightside_bar_menu .contact .contact_bar ul li:nth-last-child(1){border: none;padding-bottom: 5px}
 
+        .rightside_bar .rightside_bar_menu .pte_material img{position: absolute;right: 85px;top: -160px;width: 702px;height: 268px;display: none;}
+        .rightside_bar .rightside_bar_menu .ieltsccl_material img{position: absolute;right: 85px;top: -180px;width: 445px;height: 207px;display: none;}
+
+        
     </style>
 </head>
 <body>
-    <div id="rightside-bar">
-        <ul id="rightside-bar-menu">
-            <li id="login" class="iconfont icon-user_login">
-                <button>登录</button>
+    <div class="rightside_bar">
+        <ul class="rightside_bar_menu">
+            <span class="close iconfont icon-right-arrow" style="position:absolute;top:-26px;right:26px;display:block;font-size: 30px;color:#169eb7;" res="1"></span>
+            <li class="login rightside_bar_menu_list iconfont icon-login">
+                <a target="_blank" href="https://velocityenglish.com.au/studentlogin"><span class="rightside_bar_menu_list_title">登录/注册</span></a>
             </li>
-            <li id="regist" class="iconfont icon-login_register">
-                <button>注册</button>
+            <li class="contact rightside_bar_menu_list iconfont icon-phone1 ">
+                <span class="rightside_bar_menu_list_title">联系我们</span>
+                <ul class="contact_bar ">
+                    <li class="phone_nub" >联系电话: <br>+61 450 686 824</li>
+                    <li class="work_time" >工作时间: <br>9：00 -19：00 周一至周日</li>
+                    <li class="school_area" >各大校区</li>
+                    <li class="job_apply" >工作申请</li>
+                    <li class="partner" >迅达合作伙伴</li>
+                    <li class="suggestion" >意见反馈</li>
+                </ul>
+                
             </li>
-            <li id="phone" class="iconfont icon-phone">
-                <img src="" alt="">
-                <button>电话交流</button>
+            <li class="consult rightside_bar_menu_list iconfont icon-OnlineCustomer">
+                <span class="rightside_bar_menu_list_title">在线咨询</span>
+                <div id="velo_chatbot">
+                    <img src="#" alt="">
+                </div>
             </li>
-            <li id="consult" class="iconfont icon-consultonline">
-                <img src="" alt="">
-                <button>在线咨询</button>
+            <li class="pte_material rightside_bar_menu_list iconfont icon-translate3">
+                <span class="rightside_bar_menu_list_title">pte资料</span>
+                <div class="pte_material_bar">
+                    <img src="./html_css/velocity_font/Pte.jpg" alt="">
+                </div>
             </li>
-            <li id="freematerial" class="iconfont icon-material">
-                <img src="" alt="">
-                <button>免费资料</button>
+            <li class="ieltsccl_material rightside_bar_menu_list iconfont icon-book4">
+                <span class="rightside_bar_menu_list_title">雅思/ccl</span>
+                <div class="ieltsccl_material_bar">
+                    <img src="./html_css/velocity_font/ielts_ccl.jpg" alt="">
+                </div>
             </li>
         </ul>
     </div>
+
+    <script>
+          $('.contact').click(function(){ 
+            $(this).children(".contact_bar").css({'display':'block'});
+            $(this).children(".contact_bar").children("li").css({'display':'list-item' ,'animation-delay':'1s'});
+            $(this).children(".contact_bar").children("li").eq(0).css({'animation-delay':'0s'});
+            $(this).children(".contact_bar").children("li").eq(1).css({'animation-delay':'0.2s'});
+            $(this).children(".contact_bar").children("li").eq(2).css({'animation-delay':'0.4s'});
+            $(this).children(".contact_bar").children("li").eq(3).css({'animation-delay':'0.6s'});
+            $(this).children(".contact_bar").children("li").eq(4).css({'animation-delay':'0.8s'});
+            $(this).children(".contact_bar").children("li").eq(5).css({'animation-delay':'1.0s'});
+            $(this).children(".contact_bar").children("li").addClass("animated slideOutLeft");
+
+            $(this).siblings(".pte_material").children(".pte_material_bar").children("img").css({'display':'none'});
+            $(this).siblings(".ieltsccl_material").children(".ieltsccl_material_bar").children("img").css({'display':'none'});
+          })
+          $('.pte_material').click(function(){ 
+            $(this).children(".pte_material_bar").css({'display':'block'});
+            $(this).children(".pte_material_bar").children("img").css({'display':'block'});
+            $(this).children(".pte_material_bar").children("img").addClass("animated slideOutLeft");
+            $(this).siblings(".contact").children(".contact_bar").children("li").css({'display':'none'});
+            $(this).siblings(".ieltsccl_material").children(".ieltsccl_material_bar").children("img").css({'display':'none'});
+          })
+          $('.ieltsccl_material').click(function(){ 
+            $(this).children(".ieltsccl_material_bar").css({'display':'block'});
+            $(this).children(".ieltsccl_material_bar").children("img").css({'display':'block'});
+            $(this).children(".ieltsccl_material_bar").children("img").addClass("animated slideOutLeft");
+            $(this).siblings(".contact").children(".contact_bar").children("li").css({'display':'none'});
+            $(this).siblings(".pte_material").children(".pte_material_bar").children("img").css({'display':'none'});
+          })
+
+          $('.close').click(function(){ 
+            var  i=$(this).attr("res");
+            // 1： 点开状态->关闭状态
+            if(i=="1"){
+                $(this).attr("res","0");
+                $(this).siblings("li").removeClass("animated slideOutLeft");
+                $(this).siblings("li").eq(0).css({'animation-delay':'0s'});
+                $(this).siblings("li").eq(1).css({'animation-delay':'0.2s'});
+                $(this).siblings("li").eq(2).css({'animation-delay':'0.4s'});
+                $(this).siblings("li").eq(3).css({'animation-delay':'0.6s'});
+                $(this).siblings("li").eq(4).css({'animation-delay':'0.8s'});
+                $(this).siblings("li").eq(5).css({'animation-delay':'1.0s'});
+                $(this).siblings("li").addClass("animated slideOutRight");
+                $(this).siblings("li").children(".contact_bar").css({'display':'none'});
+                $(this).siblings("li").children(".pte_material_bar").css({'display':'none'});
+                $(this).siblings("li").children(".ieltsccl_material").css({'display':'none'});
+                $(this).css({'transform': 'scaleX(-1)'});
+            }else{
+                $(this).attr("res","1");
+                $(this).siblings("li").removeClass("animated slideOutRight");
+                $(this).siblings("li").addClass("animated slideOutLeft");
+                $(this).css({'transform': 'scaleX(1)'});
+            }
+          })
+    </script>
 </body>
 </html>
