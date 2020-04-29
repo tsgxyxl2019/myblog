@@ -10,10 +10,12 @@
     <style>
         *{margin: 0;padding: 0;}
         ul,li{list-style: none;}
-        li:hover{filter:brightness(110%)}
+        li:hover{filter:brightness(120%)}
         img{display: block;}
         body{height: 2000px;}
         a{text-decoration: none;}
+        span{display: block;}
+
         .rightside_bar{position: absolute;top: 200px;right:0 ;float: right;height: inherit;}
         .rightside_bar .rightside_bar_menu{width: 80px;position: sticky;top: 220px; margin-top: 100px;}
         .rightside_bar .rightside_bar_menu .rightside_bar_menu_list{width: 100%;border-bottom: 2px dashed black;text-align:center;padding: 5px 0;cursor: pointer;position: relative;box-sizing: border-box;background: #169eb7}
@@ -21,12 +23,12 @@
         .rightside_bar .rightside_bar_menu .rightside_bar_menu_list:last-child{border: none;padding-bottom: 5px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;}
         
         .rightside_bar .rightside_bar_menu .rightside_bar_menu_list .rightside_bar_menu_list_title{font-size:14px;display:block;width: 100%; padding: 5px 3px 5px 3px; background: #169eb7; color: white; margin: 0px auto;border-radius: 10px;box-sizing: border-box;}
-        .rightside_bar .rightside_bar_menu .contact .contact_bar {position: absolute;right: 85px;top: -40px;}
-        .rightside_bar .rightside_bar_menu .contact .contact_bar li{width:100px;font-size: 14px;padding: 5px 3px 10px 3px; text-align:center;margin-bottom: 10px;cursor: pointer;background:#169eb7;border-radius: 5px;display:none;}
-        .rightside_bar .rightside_bar_menu .contact .contact_bar ul li:nth-last-child(1){border: none;padding-bottom: 5px}
+        .rightside_bar .rightside_bar_menu .bar {position: absolute;}
+        .rightside_bar .rightside_bar_menu .bar li{width:100px;font-size: 14px;padding: 5px 3px 10px 3px; text-align:center;margin-bottom: 10px;cursor: pointer;background:#169eb7;border-radius: 5px;display:none;}
+        /* .rightside_bar .rightside_bar_menu .bar ul li:nth-last-child(1){border: none;padding-bottom: 5px} */
 
-        .rightside_bar .rightside_bar_menu .pte_material img{position: absolute;right: 85px;top: -160px;width: 702px;height: 268px;display: none;}
-        .rightside_bar .rightside_bar_menu .ieltsccl_material img{position: absolute;right: 85px;top: -180px;width: 445px;height: 207px;display: none;}
+        /* .rightside_bar .rightside_bar_menu .pte_material img{position: absolute;right: 85px;top: -160px;width: 702px;height: 268px;display: none;} */
+        /* .rightside_bar .rightside_bar_menu .ieltsccl_material img{position: absolute;right: 85px;top: -180px;width: 445px;height: 207px;display: none;} */
 
         
     </style>
@@ -39,14 +41,14 @@
                 <a target="_blank" href="https://velocityenglish.com.au/studentlogin"><span class="rightside_bar_menu_list_title">登录/注册</span></a>
             </li>
             <li class="contact rightside_bar_menu_list iconfont icon-phone1 ">
-                <span class="rightside_bar_menu_list_title">联系我们</span>
-                <ul class="contact_bar ">
-                    <li class="phone_nub" >联系电话: <br>+61 450 686 824</li>
-                    <li class="work_time" >工作时间: <br>9：00 -19：00 周一至周日</li>
-                    <li class="school_area" >各大校区</li>
-                    <li class="job_apply" >工作申请</li>
-                    <li class="partner" >迅达合作伙伴</li>
-                    <li class="suggestion" >意见反馈</li>
+                <span class="rightside_bar_menu_list_title" onclick="pop_inout(this)" res="0">联系我们</span>
+                <ul class="bar contact_bar" style="right: 85px;top: -40px;">
+                    <li class="phone_nub bar_content" >联系电话: <br>+61 450 686 824</li>
+                    <li class="work_time bar_content" >工作时间: <br>9：00 -19：00 周一至周日</li>
+                    <li class="school_area bar_content" >各大校区</li>
+                    <li class="job_apply bar_content" >工作申请</li>
+                    <li class="partner bar_content" >迅达合作伙伴</li>
+                    <li class="suggestion bar_content" >意见反馈</li>
                 </ul>
                 
             </li>
@@ -57,49 +59,69 @@
                 </div>
             </li>
             <li class="pte_material rightside_bar_menu_list iconfont icon-translate3">
-                <span class="rightside_bar_menu_list_title">pte资料</span>
-                <div class="pte_material_bar">
-                    <img src="./html_css/velocity_font/Pte.jpg" alt="">
-                </div>
+                <span class="rightside_bar_menu_list_title"  onclick="pop_inout(this)" res="0">pte资料</span>
+                <ul class="bar pte_material_bar" style="right: 85px;top: -130px;">
+                    <li class="pte_info bar_content" style="position: relative;" >
+                        <span onclick="pop_bar_inout(this)" res="0">了解pte考试</span>
+                        <ul class="bar_bar" style="position: absolute;right: 120px;top: -85px;">
+                            <li class="bar_bar_content">PTE是什么</li>
+                            <li class="bar_bar_content">PTE如何备考</li>
+                            <li class="bar_bar_content">PTE与雅思、托福的区别</li>
+                            <li class="bar_bar_content">PTE成绩单分析</li>
+                            <li class="bar_bar_content">报考流程</li>
+                            <li class="bar_bar_content">考试流程及注意事项</li>
+                            <li class="bar_bar_content">常见问题</li>
+                            <li class="bar_bar_content">PTE考试官网</li>
+                        </ul>
+                    </li>
+                    <li class="speaking bar_content" style="position: relative;">
+                        <span onclick="pop_bar_inout(this)" res="0">口语</span>
+                        <ul class="bar_bar" style="position: absolute;right: 120px;top: -44px;">
+                            <li class="bar_bar_content">RA-朗读段落</li>
+                            <li class="bar_bar_content">RS-复述原句</li>
+                            <li class="bar_bar_content">DI-描述图片</li>
+                            <li class="bar_bar_content">RL-复述讲座</li>
+                            <li class="bar_bar_content">ASQ-问题简答</li>
+                        </ul>
+                    </li>
+                    <li class="writing bar_content" >
+                        <span onclick="pop_bar_inout(this)" res="0">写作</span>
+                        <ul class="bar_bar" style="position: absolute;right: 120px;top: -22px;">
+                            <li class="bar_bar_content">SWT-缩减文章</li>
+                            <li class="bar_bar_content">WE-论文写作</li>
+                        </ul>
+                    </li>
+                    <li class="reading bar_content" > 
+                        <span onclick="pop_bar_inout(this)" res="0">阅读</span>
+                        <ul class="bar_bar" style="position: absolute;right: 120px;top: -142px;">
+                            <li class="bar_bar_content">MC-S阅读单选</li>
+                            <li class="bar_bar_content">MC-M阅读多选</li>
+                            <li class="bar_bar_content">RO-段落排序</li>
+                            <li class="bar_bar_content">RFIB-选词完形填空</li>
+                            <li class="bar_bar_content">FIBW-下拉完形填空</li>
+                        </ul>
+                    </li>
+                    <li class="listening bar_content" >
+                        听力
+                    
+                    
+                    </li>
+                </ul>
             </li>
             <li class="ieltsccl_material rightside_bar_menu_list iconfont icon-book4">
-                <span class="rightside_bar_menu_list_title">雅思/ccl</span>
-                <div class="ieltsccl_material_bar">
+                <span class="rightside_bar_menu_list_title" onclick="pop_inout(this)" res="0">雅思/ccl</span>
+                <!-- <div class="ieltsccl_material_bar">
                     <img src="./html_css/velocity_font/ielts_ccl.jpg" alt="">
-                </div>
+                </div> -->
+                <ul class="bar ieltsccl_material_bar" style="right: 85px;top: -140px;">
+                    <li class="ielts_info bar_content" >了解IELTS考试</li>
+                    <li class="ccl_info bar_content" >了解CCL考试</li>
+                </ul>
             </li>
         </ul>
     </div>
 
     <script>
-          $('.contact').click(function(){ 
-            $(this).children(".contact_bar").css({'display':'block'});
-            $(this).children(".contact_bar").children("li").css({'display':'list-item' ,'animation-delay':'1s'});
-            $(this).children(".contact_bar").children("li").eq(0).css({'animation-delay':'0s'});
-            $(this).children(".contact_bar").children("li").eq(1).css({'animation-delay':'0.2s'});
-            $(this).children(".contact_bar").children("li").eq(2).css({'animation-delay':'0.4s'});
-            $(this).children(".contact_bar").children("li").eq(3).css({'animation-delay':'0.6s'});
-            $(this).children(".contact_bar").children("li").eq(4).css({'animation-delay':'0.8s'});
-            $(this).children(".contact_bar").children("li").eq(5).css({'animation-delay':'1.0s'});
-            $(this).children(".contact_bar").children("li").addClass("animated slideOutLeft");
-
-            $(this).siblings(".pte_material").children(".pte_material_bar").children("img").css({'display':'none'});
-            $(this).siblings(".ieltsccl_material").children(".ieltsccl_material_bar").children("img").css({'display':'none'});
-          })
-          $('.pte_material').click(function(){ 
-            $(this).children(".pte_material_bar").css({'display':'block'});
-            $(this).children(".pte_material_bar").children("img").css({'display':'block'});
-            $(this).children(".pte_material_bar").children("img").addClass("animated slideOutLeft");
-            $(this).siblings(".contact").children(".contact_bar").children("li").css({'display':'none'});
-            $(this).siblings(".ieltsccl_material").children(".ieltsccl_material_bar").children("img").css({'display':'none'});
-          })
-          $('.ieltsccl_material').click(function(){ 
-            $(this).children(".ieltsccl_material_bar").css({'display':'block'});
-            $(this).children(".ieltsccl_material_bar").children("img").css({'display':'block'});
-            $(this).children(".ieltsccl_material_bar").children("img").addClass("animated slideOutLeft");
-            $(this).siblings(".contact").children(".contact_bar").children("li").css({'display':'none'});
-            $(this).siblings(".pte_material").children(".pte_material_bar").children("img").css({'display':'none'});
-          })
 
           $('.close').click(function(){ 
             var  i=$(this).attr("res");
@@ -108,15 +130,15 @@
                 $(this).attr("res","0");
                 $(this).siblings("li").removeClass("animated slideOutLeft");
                 $(this).siblings("li").eq(0).css({'animation-delay':'0s'});
-                $(this).siblings("li").eq(1).css({'animation-delay':'0.2s'});
-                $(this).siblings("li").eq(2).css({'animation-delay':'0.4s'});
-                $(this).siblings("li").eq(3).css({'animation-delay':'0.6s'});
-                $(this).siblings("li").eq(4).css({'animation-delay':'0.8s'});
-                $(this).siblings("li").eq(5).css({'animation-delay':'1.0s'});
+                $(this).siblings("li").eq(1).css({'animation-delay':'0.1s'});
+                $(this).siblings("li").eq(2).css({'animation-delay':'0.2s'});
+                $(this).siblings("li").eq(3).css({'animation-delay':'0.3s'});
+                $(this).siblings("li").eq(4).css({'animation-delay':'0.4s'});
+                $(this).siblings("li").eq(5).css({'animation-delay':'0.5s'});
                 $(this).siblings("li").addClass("animated slideOutRight");
                 $(this).siblings("li").children(".contact_bar").css({'display':'none'});
                 $(this).siblings("li").children(".pte_material_bar").css({'display':'none'});
-                $(this).siblings("li").children(".ieltsccl_material").css({'display':'none'});
+                $(this).siblings("li").children(".ieltsccl_material_bar").css({'display':'none'});
                 $(this).css({'transform': 'scaleX(-1)'});
             }else{
                 $(this).attr("res","1");
@@ -125,6 +147,100 @@
                 $(this).css({'transform': 'scaleX(1)'});
             }
           })
+
+          var isClick = true;//防止点击多次,简单规避异步操作
+          function pop_inout(self){
+              if(isClick){
+                
+                var  i=$(self).attr("res");
+                if(i=="0"){
+                    // alert("出来");
+                    $(self).attr("res","1");
+                    $(self).parent(".rightside_bar_menu_list").siblings().find("span").attr("res","0");
+                    $(self).siblings(".bar").css({'display':'block'});
+                    //animation
+                    $(self).siblings(".bar").find(".bar_content").removeClass("animated slideOutRight");
+                    $(self).siblings(".bar").find(".bar_content").addClass("animated slideOutLeft");
+                    //display
+                    $(self).siblings(".bar").find(".bar_content").css({'display':'list-item'});
+                    //delay
+                    var delay = 0;
+                    console.log($(self).siblings(".bar").find(".bar_content").length);
+                    for (var content_id=0;content_id<$(self).siblings(".bar").find(".bar_content").length;content_id++){
+                        delay += 0.1;
+                        $(self).siblings(".bar").find(".bar_content").eq(content_id).css({'animation-delay':delay+'s'});
+                        $(self).siblings(".bar").find(".bar_content").eq(content_id).css({'display':'list-item'});
+                    }
+                    //remove siblings
+                    $(self).parent(".rightside_bar_menu_list").siblings().find(".bar").css({'display':'none'});
+                    // $(self).siblings(".ieltsccl_material").children(".ieltsccl_material_bar").children("img").css({'display':'none'});
+                }else{
+                    isClick = false;
+                    $(self).attr("res","0");
+                    $(self).siblings(".bar").find(".bar_content").removeClass("animated slideOutLeft");
+                    $(self).siblings(".bar").find(".bar_content").addClass("animated slideOutRight");
+                    var vanish = 0;
+                    console.log($(self).siblings(".bar").find(".bar_content").length);
+                    for (var content_id=0;content_id<$(self).siblings(".bar").find(".bar_content").length;content_id++){
+                        vanish += 200;
+                        $(self).siblings(".bar").find(".bar_content").eq(content_id).delay(vanish).hide(0);
+                    }
+                    //定时器
+                    setTimeout(function() {
+                        isClick = true;
+                    }, 2000);//1秒内不能重复点击
+                }
+              }
+              
+             
+            }
+          
+          
+          var isClick_bar = true;//防止点击多次,简单规避异步操作
+          function pop_bar_inout(self){
+              if(isClick){
+                isClick_bar = false;
+                var  i=$(self).attr("res");
+                if(i=="0"){
+                    // alert("出来");
+                    $(self).attr("res","1");
+                    $(self).parent(".bar_content").siblings().find("span").attr("res","0");
+                    $(self).siblings(".bar_bar").css({'display':'block'});
+                    //animation
+                    $(self).siblings(".bar_bar").find(".bar_bar_content").removeClass("animated slideOutRight");
+                    $(self).siblings(".bar_bar").find(".bar_bar_content").addClass("animated slideOutLeft");
+                    //display
+                    $(self).siblings(".bar_bar").find(".bar_bar_content").css({'display':'list-item'});
+                    //delay
+                    var delay = 0;
+                    console.log($(self).siblings(".bar_bar").find(".bar_bar_content").length);
+                    for (var content_id=0;content_id<$(self).siblings(".bar_bar").find(".bar_bar_content").length;content_id++){
+                        delay += 0.1;
+                        $(self).siblings(".bar_bar").find(".bar_bar_content").eq(content_id).css({'animation-delay':delay+'s'});
+                    }
+                    //remove siblings
+                    $(self).parent(".bar_content").siblings().find(".bar_bar").css({'display':'none'});
+                    // $(self).siblings(".ieltsccl_material").children(".ieltsccl_material_bar").children("img").css({'display':'none'});
+                }else{
+                    $(self).attr("res","0");
+                    
+                    $(self).siblings(".bar_bar").find(".bar_bar_content").removeClass("animated slideOutLeft");
+                    $(self).siblings(".bar_bar").find(".bar_bar_content").addClass("animated slideOutRight");
+                    var vanish = 0;
+                    console.log($(self).siblings(".bar_bar").find(".bar_bar_content").length);
+                    for (var content_id=0;content_id<$(self).siblings(".bar_bar").find(".bar_bar_content").length;content_id++){
+                        vanish += 300;
+                        $(self).siblings(".bar_bar").find(".bar_bar_content").eq(content_id).delay(vanish).hide(0);
+                    }
+                }
+              }
+            //   console.log($(this).attr("data-val"));
+              //定时器
+              setTimeout(function() {
+                isClick_bar = true;
+                }, 2000);//0.5秒内不能重复点击
+            }
+
     </script>
 </body>
 </html>

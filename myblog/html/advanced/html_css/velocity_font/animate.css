@@ -3466,6 +3466,7 @@
 @-webkit-keyframes slideOutLeft {
   from {
     background: rgba(255,255,255,0);
+    color: rgba(255,255,255,0);
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
   }
@@ -3479,6 +3480,7 @@
 @keyframes slideOutLeft {
   from {
     background: rgba(255,255,255,0);
+    color: rgba(255,255,255,0);
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
   }
@@ -3504,6 +3506,7 @@
 
   to {
     background: rgba(255,255,255,0);
+    color: rgba(255,255,255,0);
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
   }
@@ -3517,6 +3520,7 @@
 
   to {
     background: rgba(255,255,255,0);
+    color: rgba(255,255,255,0);
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
   }
