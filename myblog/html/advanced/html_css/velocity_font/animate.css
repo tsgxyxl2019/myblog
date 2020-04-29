@@ -3467,8 +3467,8 @@
   from {
     background: rgba(255,255,255,0);
     color: rgba(255,255,255,0);
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(1000%, 0, 0);
+    transform: translate3d(1000%, 0, 0);
   }
 
   to {
@@ -3481,8 +3481,8 @@
   from {
     background: rgba(255,255,255,0);
     color: rgba(255,255,255,0);
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(1000%, 0, 0);
+    transform: translate3d(1000%, 0, 0);
   }
 
   to {
@@ -3498,6 +3498,37 @@
   animation-fill-mode: forwards;
 }
 
+@-webkit-keyframes slideOutLeft_notVanished {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft_notVanished {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideOutLeft_notVanished {
+  -webkit-animation-name: slideOutLeft_notVanished;
+  animation-name: slideOutLeft_notVanished;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
 @-webkit-keyframes slideOutRight {
   from {
     -webkit-transform: translate3d(0, 0, 0);
@@ -3507,8 +3538,8 @@
   to {
     background: rgba(255,255,255,0);
     color: rgba(255,255,255,0);
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(1000%, 0, 0);
+    transform: translate3d(1000%, 0, 0);
   }
 }
 
@@ -3521,8 +3552,8 @@
   to {
     background: rgba(255,255,255,0);
     color: rgba(255,255,255,0);
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(1000%, 0, 0);
+    transform: translate3d(1000%, 0, 0);
   }
 }
 
@@ -3532,6 +3563,39 @@
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
+
+@-webkit-keyframes slideOutRight_notVanished {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes slideOutRight_notVanished {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.slideOutRight_notVanished {
+  -webkit-animation-name: slideOutRight_notVanished;
+  animation-name: slideOutRight_notVanished;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
 
 @-webkit-keyframes slideOutUp {
   from {
@@ -3565,8 +3629,8 @@
 }
 
 .animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
