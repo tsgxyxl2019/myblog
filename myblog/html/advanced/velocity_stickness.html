@@ -253,7 +253,7 @@
                     $(self).siblings(".bar").find(".bar_content").css({'display':'list-item'});
                     //delay
                     var delay = 0;
-                    console.log($(self).siblings(".bar").find(".bar_content").length);
+                    // console.log($(self).siblings(".bar").find(".bar_content").length);
                     for (var content_id=0;content_id<$(self).siblings(".bar").find(".bar_content").length;content_id++){
                         delay += 0.1;
                         $(self).siblings(".bar").find(".bar_content").eq(content_id).css({'animation-delay':delay+'s'});
@@ -276,6 +276,8 @@
                     // }
                     //定时器
                     // var time_limit = 200 *  $(self).siblings(".bar").find(".bar_content").length + 100;//动态获得需要暂停点击的时长
+                    $(self).siblings(".bar").delay(1000).hide(0);//动画结束后隐藏
+                    // console.log($(self).siblings(".bar").length);
                     setTimeout(function() {
                         isClick = true;
                     }, time_limit);//time_limit内不能重复点击
@@ -313,7 +315,7 @@
                 }else{
                     isClick_bar = false;
                     $(self).attr("res","0");
-                    $(self).siblings(".bar_bar").css({'z-index':'-2'});//fadeinout 后不遮挡原元素
+                    $(self).siblings(".bar_bar").css({'z-index':'-3'});//fadeinout 后不遮挡原元素
                     $(self).siblings(".bar_bar").find(".bar_bar_content").removeClass("animated slideOutLeft");
                     $(self).siblings(".bar_bar").find(".bar_bar_content").addClass("animated slideOutRight");
                     // var vanish = 0;
@@ -324,6 +326,7 @@
                     // }
                     //定时器
                     // var time_limit = 200 *  $(self).siblings(".bar_bar").find(".bar_bar_content").length + 100;//动态获得需要暂停点击的时长
+                    $(self).siblings(".bar_bar").delay(1000).hide(0);//动画结束后隐藏
                     setTimeout(function() {
                         isClick_bar = true;
                     }, time_limit);//time_limit内不能重复点击
