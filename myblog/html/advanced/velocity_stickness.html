@@ -190,15 +190,16 @@
 
     <script>
         //能合并写,偷下懒交给后人了
-          var isClick_close = true;//防止点击多次,hide()function跟不上导致的标签丢失,简单规避异步操作
-          $('.close').click(function(){ 
+        var time_limit = 1000;
+        var isClick_close = true;//防止点击多次,hide()function跟不上导致的标签丢失,简单规避异步操作
+        $('.close').click(function(){ 
             if(isClick_close){
                 var  i=$(this).attr("res");
                 // 1： 点开状态->关闭状态
                 if(i=="1"){
                     isClick_close = false;
                     $(this).attr("res","0");
-                    //把所有已打开的全部displaynone掉
+                    //把所有已打开的二级全部displaynone掉
                     $(this).siblings("li").find("li").css({'display':'none'});
                     //animation
                     $(this).siblings("li").removeClass("animated slideOutLeft");
@@ -211,16 +212,16 @@
                         delay += 0.1;
                         $(this).siblings("li").eq(content_id).css({'animation-delay':delay+'s'});
                     }
-                    var vanish = 0;
-                    // console.log($(self).siblings(".bar_bar").find(".bar_bar_content").length);
-                    for (var content_id=0;content_id<$(this).siblings("li").length;content_id++){
-                        vanish += 200;
-                        $(this).siblings("li").eq(content_id).delay(vanish).hide(0);
-                    }
+                    // var vanish = 0;
+                    // // console.log($(self).siblings(".bar_bar").find(".bar_bar_content").length);
+                    // for (var content_id=0;content_id<$(this).siblings("li").length;content_id++){
+                    //     vanish += 200;
+                    //     $(this).siblings("li").eq(content_id).delay(vanish).hide(0);
+                    // }
                     $(this).css({'transform': 'scaleX(-1)'});
                     //定时器
-                    var time_limit = 200 *  $(this).siblings("li").length + 100;//动态获得需要暂停点击的时长
-                    console.log(time_limit);
+                    // var time_limit = 200 *  $(this).siblings("li").length + 100;//动态获得需要暂停点击的时长
+                    $(this).siblings("li").delay(1000).hide(0);//动画结束后隐藏
                     setTimeout(function() {
                         isClick_close = true;
                     }, time_limit);//time_limit内不能重复点击
@@ -264,16 +265,17 @@
                 }else{
                     isClick = false;
                     $(self).attr("res","0");
+                    $(self).siblings(".bar").css({'z-index':'-1'});//fadeinout 后不遮挡原元素
                     $(self).siblings(".bar").find(".bar_content").removeClass("animated slideOutLeft");
                     $(self).siblings(".bar").find(".bar_content").addClass("animated slideOutRight");
-                    var vanish = 0;
-                    console.log($(self).siblings(".bar").find(".bar_content").length);
-                    for (var content_id=0;content_id<$(self).siblings(".bar").find(".bar_content").length;content_id++){
-                        vanish += 200;
-                        $(self).siblings(".bar").find(".bar_content").eq(content_id).delay(vanish).hide(0);
-                    }
+                    // var vanish = 0;
+                    // console.log($(self).siblings(".bar").find(".bar_content").length);
+                    // for (var content_id=0;content_id<$(self).siblings(".bar").find(".bar_content").length;content_id++){
+                    //     vanish += 200;
+                    //     $(self).siblings(".bar").find(".bar_content").eq(content_id).delay(vanish).hide(0);
+                    // }
                     //定时器
-                    var time_limit = 200 *  $(self).siblings(".bar").find(".bar_content").length + 100;//动态获得需要暂停点击的时长
+                    // var time_limit = 200 *  $(self).siblings(".bar").find(".bar_content").length + 100;//动态获得需要暂停点击的时长
                     setTimeout(function() {
                         isClick = true;
                     }, time_limit);//time_limit内不能重复点击
@@ -311,16 +313,17 @@
                 }else{
                     isClick_bar = false;
                     $(self).attr("res","0");
+                    $(self).siblings(".bar_bar").css({'z-index':'-2'});//fadeinout 后不遮挡原元素
                     $(self).siblings(".bar_bar").find(".bar_bar_content").removeClass("animated slideOutLeft");
                     $(self).siblings(".bar_bar").find(".bar_bar_content").addClass("animated slideOutRight");
-                    var vanish = 0;
-                    console.log($(self).siblings(".bar_bar").find(".bar_bar_content").length);
-                    for (var content_id=0;content_id<$(self).siblings(".bar_bar").find(".bar_bar_content").length;content_id++){
-                        vanish += 200;
-                        $(self).siblings(".bar_bar").find(".bar_bar_content").eq(content_id).delay(vanish).hide(0);
-                    }
+                    // var vanish = 0;
+                    // console.log($(self).siblings(".bar_bar").find(".bar_bar_content").length);
+                    // for (var content_id=0;content_id<$(self).siblings(".bar_bar").find(".bar_bar_content").length;content_id++){
+                    //     vanish += 200;
+                    //     $(self).siblings(".bar_bar").find(".bar_bar_content").eq(content_id).delay(vanish).hide(0);
+                    // }
                     //定时器
-                    var time_limit = 200 *  $(self).siblings(".bar_bar").find(".bar_bar_content").length + 100;//动态获得需要暂停点击的时长
+                    // var time_limit = 200 *  $(self).siblings(".bar_bar").find(".bar_bar_content").length + 100;//动态获得需要暂停点击的时长
                     setTimeout(function() {
                         isClick_bar = true;
                     }, time_limit);//time_limit内不能重复点击
