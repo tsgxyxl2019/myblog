@@ -10,14 +10,14 @@
     <style>
         *{margin: 0;padding: 0;}
         ul,li{list-style: none;}
-        li:hover{filter:brightness(120%)}
+        li:hover{filter:brightness(110%)}
         img{display: block;}
         body{height: 2000px;}
         a{text-decoration: none;color: white;}
         span{display: block;}
 
         .rightside_bar{position: absolute;top: 200px;right:0 ;float: right;height: inherit;}
-        .rightside_bar .rightside_bar_menu{width: 80px;position: sticky;top: 220px; margin-top: 100px;}
+        .rightside_bar .rightside_bar_menu{width: 80px;position: sticky;top: 220px;}
         .rightside_bar .rightside_bar_menu .rightside_bar_menu_list{width: 100%;border-bottom: 2px dashed white;text-align:center;padding: 5px 0;cursor: pointer;position: relative;box-sizing: border-box;background: #ff8400}
         .rightside_bar .rightside_bar_menu .rightside_bar_menu_list:nth-of-type(1){padding-top: 10px;border-top-left-radius: 10px;border-top-right-radius: 10px;}
         .rightside_bar .rightside_bar_menu .rightside_bar_menu_list:last-child{border: none;padding-bottom: 5px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;}
@@ -55,9 +55,15 @@
                 
             </li>
             <li class="consult rightside_bar_menu_list iconfont icon-OnlineCustomer">
-                <span class="rightside_bar_menu_list_title">在线咨询</span>
-                <div id="velo_chatbot">
-                    <img src="#" alt="">
+                <span class="rightside_bar_menu_list_title" onclick="pop_chatbot(this)" res= "0">在线咨询</span>
+                <div id="velo_chatbot"  style="position:absolute;right: 120px;top: 0px; display: none;">
+                    <iframe
+                        allow="microphone;"
+                        width="350px"
+                        
+                        style="border: 1px solid #ff8400;height:calc(100vh - 360px);"
+                        src="https://console.dialogflow.com/api-client/demo/embedded/6a4e5078-c6b0-424c-b608-1dda0dd9732e">
+                    </iframe>
                 </div>
             </li>
             <li class="pte_material rightside_bar_menu_list iconfont icon-book4">
@@ -237,14 +243,15 @@
             }
           })
 
-          var isClick = true;//防止点击多次,hide()function跟不上导致的标签丢失,简单规避异步操作
-          function pop_inout(self){
+        var isClick = true;//防止点击多次,hide()function跟不上导致的标签丢失,简单规避异步操作
+        function pop_inout(self){
               if(isClick){
                 var  i=$(self).attr("res");
                 if(i=="0"){
                     // alert("出来");
                     $(self).attr("res","1");
                     $(self).parent(".rightside_bar_menu_list").siblings().find("span").attr("res","0");
+                    
                     $(self).siblings(".bar").css({'display':'block'});
                     //animation
                     $(self).siblings(".bar").find(".bar_content").removeClass("animated slideOutRight");
@@ -261,6 +268,7 @@
                     }
                     //remove siblings
                     $(self).parent(".rightside_bar_menu_list").siblings().find(".bar").css({'display':'none'});
+                    $(self).parent(".rightside_bar_menu_list").siblings().find("#velo_chatbot").css({'display':'none'});
                     // $(self).siblings(".ieltsccl_material").children(".ieltsccl_material_bar").children("img").css({'display':'none'});
                 }else{
                     isClick = false;
@@ -287,9 +295,8 @@
              
             }
           
-          
-          var isClick_bar = true;//防止点击多次,简单规避异步操作
-          function pop_bar_inout(self){
+        var isClick_bar = true;//防止点击多次,简单规避异步操作
+        function pop_bar_inout(self){
               if(isClick_bar){
                 var  i=$(self).attr("res");
                 if(i=="0"){
@@ -333,7 +340,19 @@
                 }
               }
             }
-
+            //chatbot
+        function pop_chatbot(self){
+            var  i=$(self).attr("res");
+            if(i=="0"){
+                $(self).attr("res","1");
+                $(self).siblings("#velo_chatbot").css({'display':'block'});
+                $(self).parent(".rightside_bar_menu_list").siblings().find("span").attr("res","0");
+                $(self).parent(".rightside_bar_menu_list").siblings().find(".bar").css({'display':'none'});
+            }else{
+                $(self).attr("res","0");
+                $(self).siblings("#velo_chatbot").css({'display':'none'});
+            }
+        }
     </script>
 </body>
 </html>
