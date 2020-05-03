@@ -11,6 +11,7 @@
         *{margin: 0;padding: 0;}
         ul,li{list-style: none;}
         li:hover{filter:brightness(110%)}
+        #velo_chatbot:hover{filter:brightness(90%)}
         img{display: block;}
         body{height: 2000px;}
         a{text-decoration: none;color: white;}
@@ -56,12 +57,12 @@
             </li>
             <li class="consult rightside_bar_menu_list iconfont icon-OnlineCustomer">
                 <span class="rightside_bar_menu_list_title" onclick="pop_chatbot(this)" res= "0">在线咨询</span>
-                <div id="velo_chatbot"  style="position:absolute;right: 120px;top: 0px; display: none;">
+                <div id="velo_chatbot"  style="position:absolute;right: 120px;top: 0px; display: none;top:-360px;">
                     <iframe
                         allow="microphone;"
                         width="350px"
                         
-                        style="border: 1px solid #ff8400;height:calc(100vh - 360px);"
+                        style="border: 1px solid #ff8400;height:calc(100vh);"
                         src="https://console.dialogflow.com/api-client/demo/embedded/6a4e5078-c6b0-424c-b608-1dda0dd9732e">
                     </iframe>
                 </div>
