@@ -1,0 +1,16 @@
+{
+    "require": {
+        "symfony/console": "^3.0",
+        "silex/silex": "^2.3",
+        "google/apiclient": "^2.1",
+        "google/cloud-logging": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Google\\Cloud\\Samples\\Tasks\\": "src/"
+        },
+        "files": [
+            "src/create_task.php"
+        ]
+    }
+}

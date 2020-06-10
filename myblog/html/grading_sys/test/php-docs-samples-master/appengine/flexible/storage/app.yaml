@@ -1,0 +1,10 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: .
+
+# [START gae_flex_storage_yaml]
+env_variables:
+  GOOGLE_STORAGE_BUCKET: "your-bucket-name"
+# [END gae_flex_storage_yaml]

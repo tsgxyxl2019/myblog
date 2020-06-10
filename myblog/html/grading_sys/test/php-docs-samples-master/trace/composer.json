@@ -1,0 +1,5 @@
+{
+    "require": {
+        "opencensus/opencensus-exporter-stackdriver": "^0.1.0"
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "google/cloud-core": "^1.5"
+    }
+}

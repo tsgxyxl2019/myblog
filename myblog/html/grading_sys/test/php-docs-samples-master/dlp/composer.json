@@ -1,0 +1,8 @@
+{
+    "name": "google/dlp-sample",
+    "type": "project",
+    "require": {
+        "google/cloud-dlp": "^0.26.1",
+        "google/cloud-pubsub": "^1.11.1"
+    }
+}

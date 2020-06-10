@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velo_PostEmail</title>
+    <style>
+        .l {float: left;margin:20px 50px 20px 0px}
+        .clear::after{content: "";display: block;clear: both;}
+        .tol_dev {
+            width: 40vw;
+            height: 40vh;
+            background-color: yellow;
+            overflow: hidden;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+            
+        .dev_li {
+            width: 33%;
+            height: 40vh;
+            background-color: blue;
+            display: inline-block;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="/action_page.php">
+        <fieldset>
+            <legend>迅达英语Email系统:</legend>
+            <label for="fname">选择发送者邮箱：</label>
+            <select style="display: block;">
+                <option value ="velocityenglishofficial1">velocityenglishofficial1</option>
+                <option value ="velocityenglishofficial2">velocityenglishofficial2</option>
+                <option value="velocityenglishofficial3">velocityenglishofficial3</option>
+                <option value="velocityenglishofficial4">velocityenglishofficial4</option>
+            </select></br>
+            <p>email_title:</p>
+            <input type="text" name="email_title" placeholder="请填写邮件的标题..." autocomplete ="off" style="width:40vw">
+            <p>email_content:</p>
+            <textarea class="l" style="display: block;width: 40vw;" name="email_message" rows="20"  placeholder="请填写邮件的内容..." autocomplete ="off"></textarea>
+            <div class="l">
+                <textarea style="display: block;width: 40vw;" name="email_addressarea" rows="20" placeholder="请填写邮箱地址，用空格隔开每个邮箱地址,最后一个邮箱后不需要空格" autocomplete ="off"></textarea>
+                <input style="display: inline-block; margin-top: 50px;" type="file" name="email_attachment[]" multiple="multiple">
+                <input style="" type="submit" value="Submit">
+            </div>
+          
+        </fieldset>
+      </form>
+      
+      <form action="/action_page.php">
+        <fieldset>
+            <legend>Email图片系统:</legend>
+            
+          
+            <div class="tol_dev">
+                <div class="dev_li"></div>
+                <div class="dev_li"></div>
+                <div class="dev_li"></div>
+                <div class="dev_li"></div>
+            </div>
+
+        </fieldset>
+      </form>
+</body>
+</html>

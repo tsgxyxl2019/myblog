@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Speech recognition</title>
+        <style>
+            #result{
+                border: 2px solid black;
+                height: 200px;
+                border-radius: 3px;
+                font-size: 14px;
+            }
+            #button_start{
+                position: absolute;
+                top: 240px;
+                left: 40%;
+            }
+            #button_stop{
+                position: absolute;
+                top: 240px;
+                left: 60%;
+            }
+        </style>
+        <script type="application/javascript">
+            function start(){
+                var r = document.getElementById("result");
+                window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                if("webkitSpeechRecognition" in window){
+                    var speechRecognizer = new webkitSpeechRecognition();
+                    speechRecognizer.continuous = true;
+                    speechRecognizer.interimResults = true;
+                    speechRecognizer.lang = "en-US";
+                    speechRecognizer.start();
+                    
+                    var finalTranscripts = "";
+                    speechRecognizer.onresult = function(event){
+                        var interimTranscripts = "";
+                        for(var i=event.resultIndex; i<event.results.length; i++){
+                            var transcript = event.results[i][0].transcript;
+                            transcript.replace("\n", "<br>");
+                            if(event.results[i].isFinal){
+                                finalTranscripts += transcript;
+                            }
+                            else{
+                                interimTranscripts += transcript;
+                            }
+                            r.innerHTML = finalTranscripts + '<span style="color: #999;">' + interimTranscripts + '</span>';
+                        }
+                    };
+                    speechRecognizer.onerror = function(event){
+                    };
+                }
+                else{
+                    r.innerHTML = "Your browser does not support that.";
+                }
+            }
+            function stop(){
+                speechRecognizer.removeEventListener("end", recognition.start)
+                speechRecognizer.stop();
+            }
+        </script>
+    </head>
+    <body>
+        <div id="result"></div>
+        <button id="button_start" onclick="start()">Listen</button>
+        <button id="button_stop" onclick="stop()">Stop</button>
+    </body>
+</html>

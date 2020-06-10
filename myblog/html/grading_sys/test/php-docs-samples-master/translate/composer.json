@@ -1,0 +1,10 @@
+{
+    "name": "google/translate-sample",
+    "type": "project",
+    "require": {
+        "google/cloud-translate": "^1.7.2"
+    },
+    "require-dev": {
+        "google/cloud-storage": "^1.14"
+    }
+}
