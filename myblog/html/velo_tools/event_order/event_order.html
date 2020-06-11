@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event_Order</title>
+    <style>
+        label{left: 12vw;position: relative;}
+        input,select{display: block;margin:20px auto;}
+        .content{width: 50%;height: 30px;}
+        .container{width:80vw;margin: 20px auto;background-color: rgb(189, 187, 187);padding: 20px 0px;}
+        label.xrequired:before { content: '* ';color: red;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="https://velocityenglish.com.au/event_order/event_order.php" accept-charset="UTF-8" id="event_form">
+            <label for="event" class="xrequired">选择活动</label>
+            <select id="event" style="width: 50%;height: 30px;">
+                <option>6月交友会</option>
+                <option>6月读书会</option>
+                <option>6月情感讲座</option>
+                <option>6月PTE干货讲座</option>
+            </select>
+            
+            <label for="email" class="xrequired">您的Email地址</label>
+            <input class="content" placeholder="e.g. example@somewhere.com" name="email" type="email" id="email">
+        
+            <label for="first_name" class="xrequired">您的名字</label>
+            <input class="content" placeholder="Daniel" name="first_name" type="text" id="first_name">
+        
+            <label for="phone" class="xrequired">您的电话</label>
+            <input class="content" placeholder="中国或澳洲手机或宅电" name="phone" type="text" id="phone">
+        
+            <label for="student_goal">您的学习目标</label>
+            <input class="content" placeholder="PTE 65 或者 79, etc.." name="student_goal" type="text" id="student_goal">
+
+            <label for="student_goal" >从哪得知活动</label>
+            <select id="event" style="width: 50%;height: 30px;">
+                <option>微信群</option>
+                <option>朋友圈</option>
+                <option>邮箱</option>
+                <option>视频平台</option>
+                <option>其他途径</option>
+            </select>
+
+            <input type="image" src='../pics/form_apply_button.jpg' width="25%">
+        </form>
+
+    </div> 
+
+</body>
+</html>
